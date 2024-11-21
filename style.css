@@ -414,7 +414,8 @@ main .section.work{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--background-color-1);
+  background-color: var(--background-color-2);
+  margin: 16px 0;
 }
 
 #work .work-3 {
