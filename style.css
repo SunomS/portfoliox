@@ -374,7 +374,7 @@ footer {
 }
 
 .title {
-  font-size: 88px !important;
+  font-size: 64px !important;
   background-clip: text;
   background: linear-gradient(to right, #0062ff, #ff1a31);
   -webkit-background-clip: text;
@@ -384,7 +384,7 @@ footer {
 }
 
 .subtitle {
-  font-size: 28px;
+  font-size: 26px;
   color: var(--text-color-1);
   font-family: 'Dosis';
   text-align: center;
@@ -397,6 +397,13 @@ footer {
     height: 100%; 
     width: 100%;
     margin: 0 auto;
+  }
+  .title {
+    font-size: 56px !important;
+  }
+  
+  .subtitle {
+    font-size: 20px;
   }
 }
 
