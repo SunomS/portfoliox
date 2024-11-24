@@ -4,17 +4,12 @@
   --text-color-2: #676767;
   --text-color-3: #8A8D90;
   --text-color-4: #ffffff;
-  --background-color-1:#FFFFFF;
-  --background-color-2:#F5F5F7;
+  --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
+  --background-color-1:#F0F4F8;
+  --background-color-2:#FFFFFF;
   --background-color-3:#F4F3F5;
-  --background-color-4:#f2f2f4;
+  --background-color-4:#ffffff;
   --background-color-5:#2A2A2A;
-  --text-color: #222;
-  --subheading-color: #A0A0A0;
-  --placeholder-color: #6C6C6C;
-  --primary-color: #FFF;
-  --secondary-color: #E9EEF6;
-  --secondary-hover-color: #DBE1EA;
 }
 
 /****** body/html ******/
@@ -104,7 +99,6 @@ p{
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 100;
-  text-align: left;
   font-family: sans-serif ;
   color: var(--text-color);
 }
@@ -271,24 +265,10 @@ footer {
 }
 
 .overlay-text h1 {
-  font-size: 30px;
-  letter-spacing: 4px;
-  font-family: 'Dosis', sans-serif ;
-  color: var(--text-color-1);
-}
-
-.overlay-text h1 samp{
-  font-size: 42px;
+  font-size: 50px;
+  letter-spacing: 2px;
   font-family: 'Allura';
   color: var(--text-color-1);
-}
-
-.overlay-text h2 {
-  font-size: 18px;
-  letter-spacing: 1px;
-  padding-bottom: 4px;
-  color: var(--text-color-1);
-  font-family: 'Dosis', sans-serif ;
   border-bottom: 1px solid var(--text-color-1);
 }
 
@@ -313,12 +293,6 @@ footer {
   }
 }
 
-@media (max-width: 767px) {
-  .overlay-text h2 {
-    font-size: 16px;
-  }
-}
-
 /****** hero ******/
 
 .section.hero {
@@ -327,7 +301,7 @@ footer {
   background-size: cover;
   width: 100%;
   height: 100vh;
-  background: var(--background-color-4);
+  background: var(--background-color-2);
 }
 
 .section.hero::before {
@@ -345,7 +319,7 @@ footer {
       50% 50% / var(--size) var(--size),
     linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
       var(--size) var(--size);
-  mask: linear-gradient(-25deg, transparent 30%, var(--background-color-1));
+  mask: linear-gradient(-25deg, transparent 30%, var(--background-color-2));
   top: 0;
   transform-style: flat;
   pointer-events: none;
@@ -361,49 +335,119 @@ footer {
 }
 
 .hero-text {
-  display: block;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 90%;
+  height: 100vh; 
+  margin: 0 auto;
+  overflow: hidden;
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
-  text-align: center;
 }
 
 .hero-text.visible {
   opacity: 1;
 }
 
-.title {
-  font-size: 64px !important;
-  background-clip: text;
-  background: linear-gradient(to right, #0062ff, #ff1a31);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.top-text {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: auto;
+  font-size: 26px;
+  letter-spacing: 2px;
   font-family: 'Allura';
+  color: var(--text-color-2);
+  background-color: var(--background-color-2);
+}
+
+.left-side {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  text-align: left;
+  transform-origin: top center; 
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'Dosis';
+  letter-spacing: 4px; 
+  color: var(--text-color-3);
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.subtitle {
-  font-size: 26px;
+.center-text h1{
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 42px;
+  font-family: "poppins";
+  padding-bottom: 16px;
+}
+.center-text h2{
   color: var(--text-color-1);
+  font-size: 28px;
   font-family: 'Dosis';
-  text-align: center;
-  font-weight: 100 !important;
+  text-transform: none;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--text-color-3);
+}
+.center-text p{
+  color: var(--text-color-2);
+  font-size: 14px;
+  font-family: "poppins";
+}
+
+.right-side {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%) rotate(90deg);
+  text-align: right;
+  transform-origin: top center;
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'Dosis';
+  letter-spacing: 4px;
+  color: var(--text-color-3);
+}
+.right-side strong{
+  color: var(--text-color-1);
+  font-size: 12px;
 }
 
 @media (max-width: 767px) {
 
   #hero .hero-box {
+    margin: 0 auto;
     height: 100%; 
     width: 100%;
-    margin: 0 auto;
   }
-  .title {
-    font-size: 56px !important;
+  .left-side {
+    display: none;
   }
-  
-  .subtitle {
-    font-size: 20px;
+
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 16%;
+    transform: translate(-16%, -50%);
+    text-align: left;
+  }
+  .right-side {
+    position: absolute;
+    top: 70%;
+    right: 0;
+    transform: translate(50%, -50%) rotate(90deg);
   }
 }
 
@@ -423,13 +467,14 @@ main .section.work{
 }
 
 #work .work-1 {
+  border-top: 16px solid var(--background-color-1);
   width: 100%;
   height: auto;
   padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--background-color-3);
+  background-color: var(--background-color-2);
 }
 
 #work .work-2 {
@@ -450,7 +495,7 @@ main .section.work{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--background-color-4);
+  background-color: var(--background-color-2);
 }
 
 .carousel-row {
@@ -696,7 +741,7 @@ main .section.about {
 
 .end{
   position: relative;
- background-color: var(--background-color-1);
+  background-color: var(--background-color-2);
 }
 
 .contact {
@@ -718,21 +763,13 @@ main .section.about {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(./Img/footer.jpg);
+  background-color: var(--background-color-1);
+  border-bottom: 2px solid var(--text-color-3);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
-.side-card{
-  padding: 24px; 
-}
-
 @media (max-width: 767px){
-  .contact-card-1 {
-    background-image: url(./Img/footer2.jpg);
-  }
+
 }
 
 /****** contact-card-2 ******/
@@ -792,7 +829,7 @@ footer {
   justify-items: center;
   justify-content: center;
   color: var(--text-color-1);
-  background-color: var(--background-color-1);
+  background-color: var(--background-color-2);
 }
 
 
