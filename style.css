@@ -5,16 +5,16 @@
   --text-color-3: #8A8D90;
   --text-color-4: #ffffff;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
-  --background-color-1:#F0F4F8;
-  --background-color-2:#FFFFFF;
-  --background-color-3:#F4F3F5;
-  --background-color-4:#ffffff;
-  --background-color-5:#2A2A2A;
+  --background-color-1: #F0F4F8;
+  --background-color-2: #FFFFFF;
+  --background-color-3: #F4F3F5;
+  --background-color-4: #ffffff;
+  --background-color-5: #2A2A2A;
 }
 
 /****** body/html ******/
 
-body{
+body {
   position: relative;
   font-family: 'Dosis', sans-serif;
 }
@@ -41,7 +41,7 @@ body {
 /****** basic ******/
 
 
-h1{
+h1 {
   font-size: 24px;
   letter-spacing: 1px;
   font-weight: 500;
@@ -49,7 +49,7 @@ h1{
   color: var(--text-color-1);
 }
 
-h2{
+h2 {
   font-size: 22px;
   letter-spacing: 1px;
   font-weight: 500;
@@ -58,52 +58,52 @@ h2{
   color: var(--text-color-1);
 }
 
-h3{
+h3 {
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 100;
-  font-family: sans-serif ;
+  font-family: sans-serif;
   color: var(--text-color-1);
 }
 
-h4{
+h4 {
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 100;
-  font-family: sans-serif ;
+  font-family: sans-serif;
   color: var(--text-color-2);
 }
 
 
-h5{
+h5 {
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 300;
   line-height: 26px;
   margin-top: -8px;
-  font-family: sans-serif ;
+  font-family: sans-serif;
   color: var(--text-color-1);
 }
 
-h6{
+h6 {
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 300;
   line-height: 26px;
   margin-top: -8px;
-  font-family: sans-serif ;
+  font-family: sans-serif;
   color: var(--text-color-4);
 }
 
-p{
+p {
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 100;
-  font-family: sans-serif ;
+  font-family: sans-serif;
   color: var(--text-color);
 }
 
-a{
+a {
   font-size: 18px;
   letter-spacing: 1px;
   font-weight: 300;
@@ -120,7 +120,7 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: white; 
+  background-color: white;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -145,13 +145,16 @@ a{
 }
 
 @keyframes pulse {
-  0%, 100% {
-      transform: scale(1);
-      opacity: 1;
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
+
   50% {
-      transform: scale(1.2);
-      opacity: 0.8;
+    transform: scale(1.2);
+    opacity: 0.8;
   }
 }
 
@@ -165,7 +168,8 @@ a{
   padding: 8px 24px;
   transform: translateY(-100%);
   transition: transform 0.8s ease-out;
-  background-color: var(--background-color-1);
+  background-color: var(--background-color-2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -178,25 +182,35 @@ a{
   visibility: hidden;
 }
 
-.nav-item{
+.nav-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-size: 32px;
   font-weight: 800;
   font-family: 'Allura';
-  color: var(--text-color-1);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.custom-btn-nav{
+.custom-btn-nav {
   border-radius: 16px;
   padding: 8px 16px;
   font-size: 14px;
   letter-spacing: 1px;
   font-family: 'Dosis';
+}
+
+.custom-btn-nav .fa-solid{
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 767px) {
@@ -216,19 +230,19 @@ footer {
   z-index: 1;
 }
 
-.custom-btn{
+.custom-btn {
   position: relative;
   border-radius: 16px;
   padding: 8px 16px;
 }
 
-.section-title{
+.section-title {
   width: 8rem;
-  border-bottom:2px solid var(--text-color-2);
+  border-bottom: 2px solid var(--text-color-2);
 }
 
 @media (max-width: 767px) {
-  .custom-btn{
+  .custom-btn {
     padding: 4px 16px;
   }
 }
@@ -282,12 +296,16 @@ footer {
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   30% {
     transform: translateY();
   }
+
   60% {
     transform: translateY(8px);
   }
@@ -305,21 +323,17 @@ footer {
 }
 
 .section.hero::before {
-  --size: 45px;
-  --line: color-mix(in lch, canvasText, transparent 85%);
+  --size: 48px;
+  --line: color-mix(in lch, canvasText, transparent 88%);
   content: '';
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background: linear-gradient(
-        90deg,
-        var(--line) 1px,
-        transparent 1px var(--size)
-      )
-      50% 50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
-      var(--size) var(--size);
-  mask: linear-gradient(-25deg, transparent 30%, var(--background-color-2));
+  background: linear-gradient(90deg,
+      var(--line) 1px,
+      transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+  mask: linear-gradient(-25deg, transparent 32%, var(--background-color-2));
   top: 0;
   transform-style: flat;
   pointer-events: none;
@@ -330,14 +344,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; 
+  height: 100%;
   width: 100%;
 }
 
 .hero-text {
   position: relative;
   width: 90%;
-  height: 100vh; 
+  height: 100vh;
   margin: 0 auto;
   overflow: hidden;
   opacity: 0;
@@ -368,11 +382,11 @@ footer {
   left: 0;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-align: left;
-  transform-origin: top center; 
+  transform-origin: top center;
   white-space: nowrap;
   font-size: 14px;
   font-family: 'Dosis';
-  letter-spacing: 4px; 
+  letter-spacing: 4px;
   color: var(--text-color-3);
 }
 
@@ -384,16 +398,17 @@ footer {
   text-align: center;
 }
 
-.center-text h1{
+.center-text h1 {
   background: var(--text-gradient);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 42px;
   font-family: "poppins";
   padding-bottom: 16px;
 }
-.center-text h2{
+
+.center-text h2 {
   color: var(--text-color-1);
   font-size: 28px;
   font-family: 'Dosis';
@@ -401,7 +416,8 @@ footer {
   padding-bottom: 8px;
   border-bottom: 1px solid var(--text-color-3);
 }
-.center-text p{
+
+.center-text p {
   color: var(--text-color-2);
   font-size: 14px;
   font-family: "poppins";
@@ -420,7 +436,8 @@ footer {
   letter-spacing: 4px;
   color: var(--text-color-3);
 }
-.right-side strong{
+
+.right-side strong {
   color: var(--text-color-1);
   font-size: 12px;
 }
@@ -429,9 +446,10 @@ footer {
 
   #hero .hero-box {
     margin: 0 auto;
-    height: 100%; 
+    height: 100%;
     width: 100%;
   }
+
   .left-side {
     display: none;
   }
@@ -443,6 +461,15 @@ footer {
     transform: translate(-16%, -50%);
     text-align: left;
   }
+
+  .center-text h1 {
+    font-size: 32px;
+  }
+  
+  .center-text h2 {
+    font-size: 24px;
+  }
+
   .right-side {
     position: absolute;
     top: 70%;
@@ -459,7 +486,7 @@ main {
 }
 
 /****** work ******/
-main .section.work{
+main .section.work {
   position: relative;
   width: 100%;
   height: auto;
@@ -524,6 +551,7 @@ main .section.work{
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  background-color: var(--background-color-1);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
@@ -533,17 +561,18 @@ main .section.work{
   align-items: center;
   justify-content: center;
   justify-items: center;
+  background-color: var(--background-color-2);
 }
 
-.work-title{
+.work-title {
   display: block;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-#work .section-title{
+#work .section-title {
   width: auto;
-  border-bottom:2px solid var(--text-color-2);
+  border-bottom: 2px solid var(--text-color-2);
   margin-bottom: 8px;
   padding-bottom: 8px;
 }
@@ -585,19 +614,19 @@ main .section.about {
   background-color: var(--background-color-2);
 }
 
-#about .grid-item-box{
+#about .grid-item-box {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   gap: 4px;
 }
 
-#about .grid-item-box-img{
+#about .grid-item-box-img {
   padding: 16px 0;
 }
 
-#about .grid-item-box-img img{
+#about .grid-item-box-img img {
   height: 120px;
   width: 120px;
   border-radius: 50%;
@@ -607,7 +636,7 @@ main .section.about {
   scale: 0.5 !important;
 }
 
-#about .grid-item-tl{
+#about .grid-item-tl {
   display: grid;
   grid-template-columns: repeat(1fr);
   grid-template-rows: repeat(auto, 1fr);
@@ -624,18 +653,18 @@ main .section.about {
   height: 100%;
 }
 
-#about .tl-cell .fa-solid{
+#about .tl-cell .fa-solid {
   font-size: 32px;
   margin-left: 32px;
   color: var(--text-color-3);
 }
 
-#about .tl-cell-box{
+#about .tl-cell-box {
   padding-left: 16px;
   margin-top: 16px;
 }
 
-#about .grid-item-box-2{
+#about .grid-item-box-2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -669,7 +698,7 @@ main .section.about {
   height: 100%;
 }
 
-#about .grid-cell .fa-solid{
+#about .grid-cell .fa-solid {
   font-size: 32px;
   padding: 8px;
   margin-top: -16px;
@@ -698,18 +727,18 @@ main .section.about {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-#about .grid-cell-2 .fa-brands{
+#about .grid-cell-2 .fa-brands {
   font-size: 28px;
   color: var(--text-color-2);
 }
 
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
   main .section.about {
     padding: 8px;
   }
@@ -739,7 +768,7 @@ main .section.about {
 
 /****** contact ******/
 
-.end{
+.end {
   position: relative;
   background-color: var(--background-color-2);
 }
@@ -768,13 +797,11 @@ main .section.about {
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
-@media (max-width: 767px){
-
-}
+@media (max-width: 767px) {}
 
 /****** contact-card-2 ******/
 
-.contact-card-2{
+.contact-card-2 {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -789,16 +816,17 @@ main .section.about {
   background-color: var(--background-color-5);
 }
 
-.contact-id h1{
+.contact-id h1 {
   color: var(--text-color-4);
   border-bottom: 2px solid var(--text-color-4);
 }
 
-.email, .social{
+.email,
+.social {
   padding: 8px 0;
 }
 
-.social a{
+.social a {
   font-size: 28px;
   margin-right: 16px;
   color: var(--text-color-4);
@@ -812,9 +840,10 @@ main .section.about {
     padding: 16px;
     border-radius: 16px;
   }
-  .contact-id h1{
-   padding-bottom: 24px;
-   border-bottom: none;
+
+  .contact-id h1 {
+    padding-bottom: 24px;
+    border-bottom: none;
   }
 }
 
