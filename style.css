@@ -740,14 +740,14 @@ main .section.about {
 
 @media (max-width: 767px) {
   main .section.about {
-    padding: 8px;
+    padding: 16px 8px;
   }
 
   #about .grid-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    gap: 8px;
+    gap: 16px;
   }
 
   #about .grid-item {
