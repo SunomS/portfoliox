@@ -797,6 +797,21 @@ main .section.about {
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
+.side-card{
+  background-color: var(--background-color-2);
+  padding: 32px;
+  border-radius: 8px;
+}
+
+.side-card .nav-link{
+  color: var(--text-color-1);
+}
+
+.side-card .nav-link.active {
+  background: var(--text-gradient); /* Or any other background color you prefer */
+}
+
+
 @media (max-width: 767px) {}
 
 /****** contact-card-2 ******/
@@ -863,3 +878,4 @@ footer {
 
 
 /****** end ******/
+
