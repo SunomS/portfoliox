@@ -797,17 +797,19 @@ main .section.about {
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
-.side-card{
+.center-card{
   background-color: var(--background-color-2);
   padding: 32px;
   border-radius: 8px;
+  margin-top: 32px;
 }
 
-.side-card .nav-link{
+.center-card .nav-link{
   color: var(--text-color-1);
+  font-family: "poppins";
 }
 
-.side-card .nav-link.active {
+.center-card .nav-link.active {
   background: var(--text-gradient); /* Or any other background color you prefer */
 }
 
