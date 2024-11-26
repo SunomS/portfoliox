@@ -793,9 +793,43 @@ main .section.about {
   width: 100%;
   overflow: hidden;
   background-color: var(--background-color-1);
-  border-bottom: 2px solid var(--text-color-3);
+  border-bottom: 4px solid var(--text-color-3);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
+
+.contact-card-1::after {
+  content: "";
+  position: absolute;
+  bottom: 2px; 
+  left: 1%;
+  right: 1%;
+  height: 2px; 
+  background: linear-gradient(45deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
+  background-size: 200% 200%; 
+  animation: animateBorder 5s infinite ease-in-out;
+  box-shadow: 0 -8px 4px 8px rgba(33, 123, 254, 0.6);
+  pointer-events: none; 
+}
+
+@keyframes animateBorder {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 -8px 24px 8px rgba(33, 123, 254, 0.6);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 -8px 24px 16px rgba(167, 116, 255, 0.6);
+  }
+  95% {
+    background-position: 0% 50%;
+    box-shadow: 0 -8px 24px 8px rgba(238, 77, 93, 0.6);
+  }
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 -8px 24px 8px rgba(33, 123, 254, 0.6);
+  }
+}
+
 
 .center-card{
   background-color: var(--background-color-2);
@@ -816,6 +850,15 @@ main .section.about {
 .center-card .nav-link.active {
   background: var(--background-color-3); 
   color: var(--text-color-4);
+}
+
+.tab-pane {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  line-height: 26px;
+  font-family: sans-serif;
+  color: var(--text-color-1);
 }
 
 .btn-cta-wrapper {
@@ -843,20 +886,6 @@ main .section.about {
   position: relative;
   z-index: 1; 
 }
-
-.btn-cta2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 120px; 
-  height: 100%;
-  border-radius: 16px;
-  z-index: 0; 
-  filter: blur(30px);
-  opacity: 0.4;
-  background: var(--text-gradient);
-}
-
 
 @-webkit-keyframes anime {
   0% {
