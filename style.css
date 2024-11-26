@@ -3,13 +3,11 @@
   --text-color-1: #2B2B2B;
   --text-color-2: #676767;
   --text-color-3: #8A8D90;
-  --text-color-4: #ffffff;
+  --text-color-4: #ECECEC;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
   --background-color-1: #F0F4F8;
   --background-color-2: #FFFFFF;
-  --background-color-3: #F4F3F5;
-  --background-color-4: #ffffff;
-  --background-color-5: #2A2A2A;
+  --background-color-3: #171717;
 }
 
 /****** body/html ******/
@@ -204,6 +202,8 @@ a {
   font-size: 14px;
   letter-spacing: 1px;
   font-family: 'Dosis';
+  color: var(--text-color-4);
+  background-color: var(--background-color-3);
 }
 
 .custom-btn-nav .fa-solid{
@@ -802,17 +802,85 @@ main .section.about {
   padding: 32px;
   border-radius: 8px;
   margin-top: 32px;
+  margin-bottom: 16px;
 }
 
 .center-card .nav-link{
   color: var(--text-color-1);
-  font-family: "poppins";
+  letter-spacing: 1px;
+  border: 1px solid var(--text-color-2);
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 .center-card .nav-link.active {
-  background: var(--text-gradient); /* Or any other background color you prefer */
+  background: var(--background-color-3); 
+  color: var(--text-color-4);
 }
 
+.btn-cta-wrapper {
+  position: relative;
+  display: inline-block; 
+  width: 120px; 
+  height: auto;
+  text-align: center;
+  cursor: pointer; 
+}
+
+.btn-cta {
+  width: 120px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 4px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 16px;
+  background: var(--text-gradient);
+  background-size: 600%;
+  -webkit-animation: anime 8s linear infinite;
+  animation: anime 8s linear infinite;
+  position: relative;
+  z-index: 1; 
+}
+
+.btn-cta2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px; 
+  height: 100%;
+  border-radius: 16px;
+  z-index: 0; 
+  filter: blur(30px);
+  opacity: 0.4;
+  background: var(--text-gradient);
+}
+
+
+@-webkit-keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 @media (max-width: 767px) {}
 
@@ -830,7 +898,7 @@ main .section.about {
 .contact-id {
   padding: 48px;
   border-radius: 16px;
-  background-color: var(--background-color-5);
+  background-color: var(--background-color-3);
 }
 
 .contact-id h1 {
@@ -880,4 +948,3 @@ footer {
 
 
 /****** end ******/
-
