@@ -414,7 +414,7 @@ footer {
   font-family: 'Dosis';
   text-transform: none;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--text-color-3);
+  border-bottom: 0.5px solid var(--text-color-2);
 }
 
 .center-text p {
@@ -572,7 +572,7 @@ main .section.work {
 
 #work .section-title {
   width: auto;
-  border-bottom: 2px solid var(--text-color-2);
+  border-bottom: 0.5px solid var(--text-color-2);
   margin-bottom: 8px;
   padding-bottom: 8px;
 }
