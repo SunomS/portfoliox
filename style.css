@@ -15,8 +15,8 @@
 
 :root[data-theme="dark"] {
   --text-color-1: #ECECEC;
-  --text-color-2: #C1C1C1;
-  --text-color-3: #848484;
+  --text-color-2: #B4B4B4;
+  --text-color-3: #757577;
   --text-color-4: #2B2B2B;
   --text-color-5: #ffffff36;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 60%, #ee4d5d 100%);
@@ -78,7 +78,7 @@ h3 {
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 100;
-  font-family: sans-serif;
+  font-family: "poppins";
   color: var(--text-color-1);
 }
 
@@ -115,8 +115,8 @@ p {
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 100;
-  font-family: sans-serif;
-  color: var(--text-color-1);
+  font-family: "poppins";
+  color: var(--text-color-2);
 }
 
 a {
