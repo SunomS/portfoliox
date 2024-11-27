@@ -945,7 +945,13 @@ main .section.about {
   }
 }
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+  .contact-card-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
 
 /****** contact-card-2 ******/
 
