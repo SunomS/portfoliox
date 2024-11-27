@@ -206,3 +206,18 @@ window.addEventListener("load", () => {
 
 
 });
+
+
+const toggleTheme = () => {
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+    }
+  };
+  
+  // Example usage: add an event listener to a button
+  document.getElementById('theme-toggle-button').addEventListener('click', toggleTheme);
+  

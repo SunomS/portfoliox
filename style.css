@@ -4,10 +4,27 @@
   --text-color-2: #676767;
   --text-color-3: #8A8D90;
   --text-color-4: #ECECEC;
+  --text-color-5: #00000032;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
   --background-color-1: #F0F4F8;
   --background-color-2: #FFFFFF;
-  --background-color-3: #171717;
+  --background-color-3: #272A2C;
+  --background-color-4: #171717;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"] {
+  --text-color-1: #ECECEC;
+  --text-color-2: #C1C1C1;
+  --text-color-3: #848484;
+  --text-color-4: #2B2B2B;
+  --text-color-5: #ffffff36;
+  --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 60%, #ee4d5d 100%);
+  --background-color-1: #272A2C;
+  --background-color-2: #1E1F20;
+  --background-color-3: #0D0D0D;
+  --background-color-4: #FFFFFF;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.355);
 }
 
 /****** body/html ******/
@@ -27,6 +44,7 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   overflow-y: scroll;
+  color: var(--text-color-1);
   background: var(--background-color-1);
 }
 
@@ -98,7 +116,7 @@ p {
   letter-spacing: 1px;
   font-weight: 100;
   font-family: sans-serif;
-  color: var(--text-color);
+  color: var(--text-color-1);
 }
 
 a {
@@ -108,7 +126,7 @@ a {
   font-family: 'Dosis';
   line-height: 26px;
   cursor: pointer;
-  color: var(--text-color);
+  color: var(--text-color-1);
 }
 
 /****** preloader ******/
@@ -167,7 +185,7 @@ a {
   transform: translateY(-100%);
   transition: transform 0.8s ease-out;
   background-color: var(--background-color-2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 
@@ -196,6 +214,20 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
+.nav-side{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle{
+  font-size: 20px;
+  margin-right: 16px;
+  padding: 4px 6px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color-1);
+}
+
 .custom-btn-nav {
   border-radius: 16px;
   padding: 8px 16px;
@@ -203,14 +235,11 @@ a {
   letter-spacing: 1px;
   font-family: 'Dosis';
   color: var(--text-color-4);
-  background-color: var(--background-color-3);
+  background-color: var(--background-color-4);
 }
 
 .custom-btn-nav .fa-solid{
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-color-4);
 }
 
 @media (max-width: 767px) {
@@ -234,6 +263,15 @@ footer {
   position: relative;
   border-radius: 16px;
   padding: 8px 16px;
+  color: var(--text-color-1);
+  background-color: var(--background-color-2);
+  border:1px solid var(--text-color-1);
+}
+
+.custom-btn:hover {
+  color: var(--text-color-4);
+  border:1px solid var(--text-color-1);
+  background-color: var(--background-color-4);
 }
 
 .section-title {
@@ -324,7 +362,7 @@ footer {
 
 .section.hero::before {
   --size: 48px;
-  --line: color-mix(in lch, canvasText, transparent 88%);
+  --line: var(--text-color-5), transparent;
   content: '';
   height: 100vh;
   width: 100vw;
@@ -369,11 +407,16 @@ footer {
   transform: translateX(-50%);
   text-align: center;
   width: auto;
-  font-size: 26px;
+  font-size: 14px;
   letter-spacing: 2px;
-  font-family: 'Allura';
+  font-family: sans-serif;
   color: var(--text-color-2);
   background-color: var(--background-color-2);
+}
+
+.top-text span{
+  font-family: 'Allura';
+  font-size: 26px;
 }
 
 .left-side {
@@ -793,43 +836,33 @@ main .section.about {
   width: 100%;
   overflow: hidden;
   background-color: var(--background-color-1);
-  border-bottom: 4px solid var(--text-color-3);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
 
 .contact-card-1::after {
   content: "";
   position: absolute;
-  bottom: 2px; 
-  left: 1%;
-  right: 1%;
-  height: 2px; 
-  background: linear-gradient(45deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  height: 8px; 
+  background: var(--text-gradient);
   background-size: 200% 200%; 
-  animation: animateBorder 5s infinite ease-in-out;
-  box-shadow: 0 -8px 4px 8px rgba(33, 123, 254, 0.6);
+  animation: animateBorder 5s infinite ease-in-out; 
   pointer-events: none; 
 }
 
 @keyframes animateBorder {
   0% {
     background-position: 0% 50%;
-    box-shadow: 0 -8px 24px 8px rgba(33, 123, 254, 0.6);
   }
   50% {
     background-position: 100% 50%;
-    box-shadow: 0 -8px 24px 16px rgba(167, 116, 255, 0.6);
-  }
-  95% {
-    background-position: 0% 50%;
-    box-shadow: 0 -8px 24px 8px rgba(238, 77, 93, 0.6);
   }
   100% {
     background-position: 0% 50%;
-    box-shadow: 0 -8px 24px 8px rgba(33, 123, 254, 0.6);
   }
 }
-
 
 .center-card{
   background-color: var(--background-color-2);
@@ -848,8 +881,9 @@ main .section.about {
 }
 
 .center-card .nav-link.active {
-  background: var(--background-color-3); 
   color: var(--text-color-4);
+  border:1px solid var(--text-color-1);
+  background-color: var(--background-color-4);
 }
 
 .tab-pane {
@@ -928,22 +962,30 @@ main .section.about {
   padding: 48px;
   border-radius: 16px;
   background-color: var(--background-color-3);
+  color: white;
 }
 
 .contact-id h1 {
   color: var(--text-color-4);
-  border-bottom: 2px solid var(--text-color-4);
+  border-bottom: 2px solid white;
 }
 
 .email,
 .social {
   padding: 8px 0;
+  color: white;
+}
+
+.contact-id a, 
+.contact-id h6, 
+.contact-id h1{
+  color: white !important;
 }
 
 .social a {
   font-size: 28px;
   margin-right: 16px;
-  color: var(--text-color-4);
+  color: white;
 }
 
 @media (max-width: 767px) {
