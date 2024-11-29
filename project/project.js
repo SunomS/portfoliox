@@ -13,16 +13,16 @@ gsap.utils.toArray(".comparisonSection").forEach(section => {
   });
 
   tl.fromTo(
-    section.querySelector(".afterImage"), 
-    { xPercent: -100, x: 0 }, 
+    section.querySelector(".afterImage"),
+    { xPercent: -100, x: 0 },
     { xPercent: 0 }
   )
-  .fromTo(
-    section.querySelector(".afterImage .img-place"), 
-    { xPercent: 100, x: 0 }, 
-    { xPercent: 0 }, 
-    0
-  );
+    .fromTo(
+      section.querySelector(".afterImage .img-place"),
+      { xPercent: 100, x: 0 },
+      { xPercent: 0 },
+      0
+    );
 });
 
 // Sticky Zoom Out Animation for `.StickyZoom`
@@ -38,11 +38,11 @@ if (window.innerWidth >= 767) {
       toggleActions: "play none reverse none"
     }
   })
-  .fromTo(
-    '.image-area2', 
-    { clipPath: 'inset(20% 20% 20% 20%)', scale: 0.8 }, 
-    { clipPath: 'inset(10% 10% 10% 10%)', scale: 1, duration: 2 }
-  );
+    .fromTo(
+      '.image-area2',
+      { clipPath: 'inset(20% 20% 20% 20%)', scale: 0.8 },
+      { clipPath: 'inset(10% 10% 10% 10%)', scale: 1, duration: 2 }
+    );
 }
 
 
@@ -70,68 +70,110 @@ projectStartTimeline
     ease: "power2.out"
   })
   .from(
-    ".container .row img", 
+    ".container .row img",
     {
       opacity: 0,
       x: -50,
       duration: 1,
       ease: "power2.out"
-    }, 
+    },
     "-=1"
   )
   .from(
-    ".container .row h2", 
+    ".container .row h2",
     {
       opacity: 0,
       y: 30,
       duration: 1,
       ease: "power2.out"
-    }, 
+    },
     "-=0.8"
   )
   .from(
-    ".container .row p", 
+    ".container .row p",
     {
       opacity: 0,
       y: 20,
       duration: 1,
       ease: "power2.out"
-    }, 
+    },
     "-=0.6"
   )
   .from(
-    ".container .row .col-sm-6", 
+    ".container .row .col-sm-6",
     {
       opacity: 0,
       y: 20,
       stagger: 0.2,
       duration: 1,
       ease: "power2.out"
-    }, 
+    },
     "-=0.4"
   );
 
 
-// Function to toggle the theme
-const toggleTheme = () => {
-  const root = document.documentElement;
-  const currentTheme = root.getAttribute('data-theme');
-  if (currentTheme === 'dark') {
-    root.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-  } else {
-    root.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-  }
-};
+// Function to apply the saved theme on page load
 const applySavedTheme = () => {
   const savedTheme = localStorage.getItem('theme');
   const root = document.documentElement;
-  if (savedTheme) {
-    root.setAttribute('data-theme', savedTheme);
-  } else {
-    root.setAttribute('data-theme', 'light'); 
+  const initialTheme = savedTheme || 'light';
+  root.setAttribute('data-theme', initialTheme);
+};
+
+// Function to toggle the theme with overlay animation
+const toggleThemeOverlayAnimation = (newTheme) => {
+  const root = document.documentElement;
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.right = 0;
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = newTheme === 'dark' ? '#121212' : '#ffffff';
+  overlay.style.zIndex = 1000;
+  overlay.style.opacity = 0;
+  overlay.style.clipPath = 'circle(0% at 100% 0%)';
+  overlay.style.transition = 'clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out';
+
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => {
+    overlay.style.opacity = 0.5;
+    overlay.style.clipPath = 'circle(150% at 100% 0%)';
+  });
+
+  setTimeout(() => {
+    document.body.removeChild(overlay);
+    root.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    localStorage.setItem('themeChanged', Date.now());
+  }, 600);
+};
+
+const syncThemeAcrossPages = () => {
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'themeChanged') {
+      const savedTheme = localStorage.getItem('theme');
+      const root = document.documentElement;
+
+      if (savedTheme) {
+        root.setAttribute('data-theme', savedTheme);
+      }
+    }
+  });
+};
+
+const initializeTheme = () => {
+  applySavedTheme();
+  syncThemeAcrossPages();
+  const themeToggleButton = document.getElementById('theme-toggle-button');
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', () => {
+      const root = document.documentElement;
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      toggleThemeOverlayAnimation(newTheme);
+    });
   }
 };
-document.addEventListener('DOMContentLoaded', applySavedTheme);
-document.getElementById('theme-toggle-button').addEventListener('click', toggleTheme);
+
+initializeTheme();

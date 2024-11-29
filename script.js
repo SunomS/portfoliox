@@ -1,4 +1,51 @@
+// Function to apply the saved theme on page load
+const applySavedTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    const root = document.documentElement;
+    const initialTheme = savedTheme || 'light';
+    root.setAttribute('data-theme', initialTheme);
+};
+
+const toggleThemeOverlayAnimation = (newTheme) => {
+    const root = document.documentElement;
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.top = 0;
+    overlay.style.right = 0;
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = newTheme === 'dark' ? '#121212' : '#ffffff';
+    overlay.style.zIndex = 1000;
+    overlay.style.opacity = 0;
+    overlay.style.clipPath = 'circle(0% at 100% 0%)';
+    overlay.style.transition = 'clip-path 0.6s ease-in-out, opacity 0.6s ease-in-out';
+
+    document.body.appendChild(overlay);
+
+    // Trigger the animation
+    requestAnimationFrame(() => {
+        overlay.style.opacity = 0.5;
+        overlay.style.clipPath = 'circle(150% at 100% 0%)';
+    });
+
+    setTimeout(() => {
+        document.body.removeChild(overlay);
+        root.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    }, 600);
+};
+
+
+// Apply the saved theme when the page loads
 window.addEventListener("load", () => {
+    applySavedTheme();
+    document.getElementById('theme-toggle-button').addEventListener('click', () => {
+        const root = document.documentElement;
+        const currentTheme = root.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        toggleThemeOverlayAnimation(newTheme);
+    });
+
     // Animate Preloader 
     const preloader = document.getElementById("preloader");
     if (preloader) {
@@ -204,30 +251,3 @@ window.addEventListener("load", () => {
         });
     }
 });
-
-
-// Function to toggle the theme
-const toggleTheme = () => {
-    const root = document.documentElement;
-    const currentTheme = root.getAttribute('data-theme');
-    if (currentTheme === 'dark') {
-      root.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    } else {
-      root.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    }
-  };
-  const applySavedTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    const root = document.documentElement;
-    if (savedTheme) {
-      root.setAttribute('data-theme', savedTheme);
-    } else {
-      root.setAttribute('data-theme', 'light'); 
-    }
-  };
-  document.addEventListener('DOMContentLoaded', applySavedTheme);
-  document.getElementById('theme-toggle-button').addEventListener('click', toggleTheme);
-  
-  
