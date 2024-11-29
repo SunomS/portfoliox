@@ -203,21 +203,31 @@ window.addEventListener("load", () => {
             }
         });
     }
-
-
 });
 
 
+// Function to toggle the theme
 const toggleTheme = () => {
     const root = document.documentElement;
     const currentTheme = root.getAttribute('data-theme');
     if (currentTheme === 'dark') {
       root.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
     } else {
       root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
     }
   };
-  
-  // Example usage: add an event listener to a button
+  const applySavedTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    const root = document.documentElement;
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+    } else {
+      root.setAttribute('data-theme', 'light'); 
+    }
+  };
+  document.addEventListener('DOMContentLoaded', applySavedTheme);
   document.getElementById('theme-toggle-button').addEventListener('click', toggleTheme);
+  
   
