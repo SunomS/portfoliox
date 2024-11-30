@@ -181,7 +181,7 @@ a {
   top: 0;
   width: 100%;
   z-index: 999;
-  padding: 4px 24px;
+  padding: 8px 24px;
   transform: translateY(-100%);
   transition: transform 0.8s ease-out;
   background-color: var(--background-color-2);
@@ -873,7 +873,7 @@ main .section.about {
   }
 }
 
-.main-card{
+.main-card {
   width: 100%;
   height: auto;
   background-color: var(--background-color-2);
@@ -976,7 +976,8 @@ main .section.about {
     align-items: flex-start !important;
     justify-content: center;
   }
-  .main-card{
+
+  .main-card {
     width: 96%;
   }
 }
