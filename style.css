@@ -257,16 +257,21 @@ a {
 
 /****** selection ******/
 
-.enter, .end, .section , .contact{
-  position: relative;
+.enter, .end, .section, .hero, .work, .about, .contact {
   min-width: 100% !important;
-  scrollbar-width: none;
+  scrollbar-width: none; 
 }
 
-.enter::-webkit-scrollbar , .end::-webkit-scrollbar 
-.section::-webkit-scrollbar , .contact::-webkit-scrollbar {
+.enter::-webkit-scrollbar,
+.end::-webkit-scrollbar,
+.section::-webkit-scrollbar,
+.hero::-webkit-scrollbar,
+.work::-webkit-scrollbar,
+.about::-webkit-scrollbar,
+.contact::-webkit-scrollbar {
   display: none; 
 }
+
 
 .custom-btn {
   position: relative;
