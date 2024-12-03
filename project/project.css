@@ -46,7 +46,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   color: var(--text-color-1);
-  background: var(--background-color-1);
+  background: var(--background-color-2);
 }
 
 * {
