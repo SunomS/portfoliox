@@ -834,31 +834,6 @@ main .section.about {
 
 /****** contact-card-1 ******/
 
-.contact-card-1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  text-align: center;
-  background-color: var(--background-color-1);
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-}
-
-.contact-card-1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background: var(--text-gradient);
-  background-size: 200% 200%;
-  animation: animateBorder 5s infinite ease-in-out;
-  pointer-events: none;
-}
-
 @keyframes animateBorder {
   0% {
     background-position: 0% 50%;
@@ -1003,6 +978,8 @@ main .section.about {
 .contact-id h1 {
   color: var(--text-color-4);
   border-bottom: 2px solid white;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 .email,
@@ -1015,6 +992,7 @@ main .section.about {
 .contact-id h6,
 .contact-id h1 {
   color: white !important;
+  text-decoration: none;
 }
 
 .social a {
@@ -1054,3 +1032,209 @@ footer {
 
 
 /****** end ******/
+
+.contact-card-1 {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background-color: var(--background-color-1);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+
+
+.contact-card-1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--text-gradient);
+}
+
+.game{
+  padding: 0 16px;
+}
+
+.scene {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.game-title{
+  position: absolute; 
+  top: 0;           
+  left: 50%;        
+  transform: translateX(-50%); 
+  z-index: 3;       
+  color: var(--text-color-1); 
+  text-align: center; 
+  padding: 48px; 
+}
+
+#game-cta{
+  position: relative;      
+  color: var(--text-color-1); 
+  margin-top: 32px;
+  text-align: center; 
+  opacity: 0;
+  z-index: 3;
+  transition: opacity 2s ease-in-out;
+}
+
+.scene__title {
+  font-size: 24px;
+  padding: 10px 25px;
+  background-color: white;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.scene__title_modified {
+  transform: scale(1.8);
+  z-index: 2;
+}
+
+.scene__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  z-index: 2;
+}
+
+.scene__score-board {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  z-index: 1;
+}
+
+.scene__score-board_left, .scene__score-board_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 32px;
+  line-height: 80px;
+}
+
+.scene__score-board_left {
+ background-color: transparent;
+ max-height: 96%;
+ border-radius: 8px;
+  color: #ff4040 ;
+  flex: 1;;
+}
+
+.scene__score-board_right {
+  background-color: var(--background-color-2);
+  max-height: 96%;
+  border-radius: 8px;
+  color: #2c2cff;
+  flex: 1;
+}
+
+.scene__score-board_right img{
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color-3);
+}
+
+.scene__hand-container {
+  width: 150px;
+  -webkit-animation: swang 1s ease-out infinite;
+          animation: swang 1s ease-out infinite;
+  display: flex;
+  justify-content: flex-end;
+  transform-origin: 0% 100%;
+}
+
+.scene__hand-container:last-child {
+  justify-content: flex-start;
+  -webkit-animation: swang-reversed 1s ease-out infinite;
+          animation: swang-reversed 1s ease-out infinite;
+  transform-origin: 100% 100%;
+}
+
+.scene__hand {
+  font-size: 66px;
+  transform: rotate(-85deg);
+  padding: 0 20px;
+}
+
+.scene__hand_left {
+  transform: rotate(85deg) rotateY(180deg);
+}
+
+.scene__hand_rock:after {
+  content: "✊";
+}
+
+.scene__hand_paper:after {
+  content: "✋";
+}
+
+.scene__hand_scissor:after {
+  content: "✌️";
+}
+.scene__actions{
+  z-index: 2;
+  margin-top: 5%;
+}
+
+[data-type] {
+  z-index: 2;
+  margin: 8px;
+  letter-spacing: 2px;
+}
+[data-type]:active {
+  transform: translatey(2px);
+}
+
+@-webkit-keyframes swang {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes swang {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+@-webkit-keyframes swang-reversed {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes swang-reversed {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}

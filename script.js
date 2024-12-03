@@ -235,19 +235,55 @@ window.addEventListener("load", () => {
                 );
             });
         });
-
-        // Animate Contact Item
-        const cards = document.querySelectorAll('.side-card');
-        gsap.from(cards, {
-            y: 80,
-            opacity: 0,
-            duration: 3,
-            stagger: 0.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: '.contact-card',
-                start: 'top 30%'
-            }
-        });
     }
 });
+
+
+const [ userHand, opponentHand, title, scoreLeft, scoreRight, gameCta ] = 
+    ['#hand-left', '#hand-right', '#title', '#score-left', '#score-right', '#game-cta']
+    .map(selector => document.querySelector(selector));
+
+const buttons = document.querySelectorAll('[data-type]');
+const possibilities = Object.freeze({ 1: "rock", 2: 'paper', 3: 'scissor' });
+const outcomes = Object.freeze({ 1: "Tie", 2: 'Loose', 3: 'Win' });
+const state = { user: { lastModifier: 'scene__hand_rock', wins: 0 }, opponent: { lastModifier: 'scene__hand_rock', wins: 0 } };
+let isGameCtaDisplayed = false;
+
+const getRandomFromObj = (obj) => Math.floor((Math.random() * Math.floor(Object.keys(obj).length) + 1));
+const getLogic = (outcomes, a, b) => a === b ? outcomes[1] : (((a - b + 3) % 3 === 1)) ? outcomes[2] : outcomes[3];
+const getModifier = (modifier) => `scene__hand_${modifier}`;
+
+const displayGameCta = () => {
+    if (!isGameCtaDisplayed) {
+        gameCta.style.opacity = '1'; // Change opacity to make it visible
+        isGameCtaDisplayed = true; // Ensure this logic runs only once
+    }
+};
+
+const getOutcomeAndUpdateDOM = (e) => {
+    if (!isGameCtaDisplayed) {
+        displayGameCta(); // Show the #game-cta element on first click
+    }
+
+    const choiceDataType = Number(e.target.getAttribute('data-type'));
+    const opponentChoice = getRandomFromObj(possibilities);
+    updateDOM(opponentChoice, choiceDataType);
+};
+
+const updateDOM = (opponentChoice, choiceDataType) => {
+    userHand.classList.remove(state.user.lastModifier);
+    opponentHand.classList.remove(state.opponent.lastModifier);
+    state.user.lastModifier = getModifier(possibilities[choiceDataType]);
+    state.opponent.lastModifier = getModifier(possibilities[opponentChoice]);
+    userHand.classList.add(state.user.lastModifier);
+    opponentHand.classList.add(state.opponent.lastModifier);
+
+    const outcome = getLogic(outcomes, opponentChoice, choiceDataType);
+    state.user.wins = outcome === 'Win' ? state.user.wins + 1 : state.user.wins;
+    state.opponent.wins = outcome === 'Loose' ? state.opponent.wins + 1 : state.opponent.wins;
+    scoreLeft.textContent = state.user.wins;
+    scoreRight.textContent = state.opponent.wins;
+    title.textContent = outcome;
+};
+
+buttons.forEach((button) => button.addEventListener('click', getOutcomeAndUpdateDOM));
