@@ -257,7 +257,7 @@ a {
 
 /****** selection ******/
 
-.enter, .end, .section, .hero, .work, .about, .contact {
+.enter, .end, .section, .hero, .work, .about, .contact, .pin-spacer {
   min-width: 100% !important;
   scrollbar-width: none !important; 
 }
@@ -268,7 +268,8 @@ a {
 .hero::-webkit-scrollbar,
 .work::-webkit-scrollbar,
 .about::-webkit-scrollbar,
-.contact::-webkit-scrollbar {
+.contact::-webkit-scrollbar,
+.pin-spacer::-webkit-scrollbar {
   display: none !important; 
 }
 
