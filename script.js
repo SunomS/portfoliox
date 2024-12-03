@@ -239,18 +239,30 @@ window.addEventListener("load", () => {
 });
 
 
-const [ userHand, opponentHand, title, scoreLeft, scoreRight, gameCta ] = 
-    ['#hand-left', '#hand-right', '#title', '#score-left', '#score-right', '#game-cta']
+
+const [
+    userHand,
+    opponentHand,
+    title,
+    scoreLeft,
+    scoreRight,
+    gameCta
+] = ['#hand-left', '#hand-right', '#title', '#score-left', '#score-right', '#game-cta']
     .map(selector => document.querySelector(selector));
 
 const buttons = document.querySelectorAll('[data-type]');
 const possibilities = Object.freeze({ 1: "rock", 2: 'paper', 3: 'scissor' });
-const outcomes = Object.freeze({ 1: "Tie", 2: 'Loose', 3: 'Win' });
-const state = { user: { lastModifier: 'scene__hand_rock', wins: 0 }, opponent: { lastModifier: 'scene__hand_rock', wins: 0 } };
+const outcomes = Object.freeze({ 1: "It's a Draw", 2: 'Try Again', 3: 'You Win!' });
+const state = {
+    user: { lastModifier: 'scene__hand_rock', wins: 0 },
+    opponent: { lastModifier: 'scene__hand_rock', wins: 0 }
+};
 let isGameCtaDisplayed = false;
 
 const getRandomFromObj = (obj) => Math.floor((Math.random() * Math.floor(Object.keys(obj).length) + 1));
+
 const getLogic = (outcomes, a, b) => a === b ? outcomes[1] : (((a - b + 3) % 3 === 1)) ? outcomes[2] : outcomes[3];
+
 const getModifier = (modifier) => `scene__hand_${modifier}`;
 
 const displayGameCta = () => {
@@ -279,11 +291,20 @@ const updateDOM = (opponentChoice, choiceDataType) => {
     opponentHand.classList.add(state.opponent.lastModifier);
 
     const outcome = getLogic(outcomes, opponentChoice, choiceDataType);
-    state.user.wins = outcome === 'Win' ? state.user.wins + 1 : state.user.wins;
-    state.opponent.wins = outcome === 'Loose' ? state.opponent.wins + 1 : state.opponent.wins;
+    state.user.wins = outcome === 'You Win!' ? state.user.wins + 1 : state.user.wins;
+    state.opponent.wins = outcome === 'Try Again' ? state.opponent.wins + 1 : state.opponent.wins;
     scoreLeft.textContent = state.user.wins;
     scoreRight.textContent = state.opponent.wins;
     title.textContent = outcome;
+
+    // Show the party animation if the user wins
+    const partyElement = document.getElementById('party');
+    if (outcome === 'You Win!') {
+        partyElement.style.opacity = '1';
+    } else {
+        partyElement.style.opacity = '0';
+    }
 };
 
 buttons.forEach((button) => button.addEventListener('click', getOutcomeAndUpdateDOM));
+
