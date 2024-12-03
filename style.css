@@ -1025,7 +1025,6 @@ flex: 1;;
   margin: 8px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: var(--text-color-1);
 }
 
 [data-type]:active {
