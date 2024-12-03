@@ -1023,7 +1023,9 @@ flex: 1;;
 [data-type] {
   z-index: 2;
   margin: 8px;
-  letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-color-1);
 }
 
 [data-type]:active {
