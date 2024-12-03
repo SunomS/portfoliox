@@ -36,21 +36,20 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   width: 100%;
   overflow-x: hidden;
-  box-sizing: border-box;
-  overflow-y: scroll;
   color: var(--text-color-1);
   background: var(--background-color-1);
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -258,8 +257,9 @@ a {
 /****** selection ******/
 
 .enter, .end, .section, .hero, .work, .about, .contact, .pin-spacer {
-  min-width: 100vw !important;
-  scrollbar-width: none !important; 
+  min-width: 100%; 
+  overflow: hidden; 
+  scrollbar-width: none; 
 }
 
 .enter::-webkit-scrollbar,
@@ -270,7 +270,7 @@ a {
 .about::-webkit-scrollbar,
 .contact::-webkit-scrollbar,
 .pin-spacer::-webkit-scrollbar {
-  display: none !important; 
+  display: none; 
 }
 
 
