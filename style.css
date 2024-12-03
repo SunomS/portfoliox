@@ -257,13 +257,14 @@ a {
 
 /****** selection ******/
 
-.enter, .end {
+.enter, .end, .section , .contact{
   position: relative;
   min-width: 100% !important;
   scrollbar-width: none;
 }
 
-.enter::-webkit-scrollbar , .end::-webkit-scrollbar {
+.enter::-webkit-scrollbar , .end::-webkit-scrollbar 
+.section::-webkit-scrollbar , .contact::-webkit-scrollbar {
   display: none; 
 }
 
