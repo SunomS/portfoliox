@@ -243,11 +243,11 @@ window.addEventListener("load", () => {
 const [
     userHand,
     opponentHand,
-    title,
+    titleGame,
     scoreLeft,
     scoreRight,
     gameCta
-] = ['#hand-left', '#hand-right', '#title', '#score-left', '#score-right', '#game-cta']
+] = ['#hand-left', '#hand-right', '#titleGame', '#score-left', '#score-right', '#game-cta']
     .map(selector => document.querySelector(selector));
 
 const buttons = document.querySelectorAll('[data-type]');
@@ -267,14 +267,14 @@ const getModifier = (modifier) => `scene__hand_${modifier}`;
 
 const displayGameCta = () => {
     if (!isGameCtaDisplayed) {
-        gameCta.style.opacity = '1'; // Change opacity to make it visible
-        isGameCtaDisplayed = true; // Ensure this logic runs only once
+        gameCta.style.opacity = '1';
+        isGameCtaDisplayed = true;
     }
 };
 
 const getOutcomeAndUpdateDOM = (e) => {
     if (!isGameCtaDisplayed) {
-        displayGameCta(); // Show the #game-cta element on first click
+        displayGameCta(); 
     }
 
     const choiceDataType = Number(e.target.getAttribute('data-type'));
@@ -295,9 +295,8 @@ const updateDOM = (opponentChoice, choiceDataType) => {
     state.opponent.wins = outcome === 'Try Again' ? state.opponent.wins + 1 : state.opponent.wins;
     scoreLeft.textContent = state.user.wins;
     scoreRight.textContent = state.opponent.wins;
-    title.textContent = outcome;
+    titleGame.textContent = outcome;
 
-    // Show the party animation if the user wins
     const partyElement = document.getElementById('party');
     if (outcome === 'You Win!') {
         partyElement.style.opacity = '1';

@@ -1016,6 +1016,7 @@ flex: 1;;
   margin: 8px;
   letter-spacing: 2px;
 }
+
 [data-type]:active {
   transform: translatey(2px);
 }
@@ -1045,6 +1046,7 @@ flex: 1;;
     transform: rotate(-10deg);
   }
 }
+
 @keyframes swang-reversed {
   0%, 100% {
     transform: rotate(0deg);
