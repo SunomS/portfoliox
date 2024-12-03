@@ -258,7 +258,7 @@ a {
 /****** selection ******/
 
 .enter, .end, .section, .hero, .work, .about, .contact, .pin-spacer {
-  min-width: 100% !important;
+  min-width: 100vw !important;
   scrollbar-width: none !important; 
 }
 
