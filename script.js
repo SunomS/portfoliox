@@ -239,7 +239,7 @@ window.addEventListener("load", () => {
 });
 
 
-
+// Simple Game
 const [
     userHand,
     opponentHand,
