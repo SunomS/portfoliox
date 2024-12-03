@@ -259,7 +259,7 @@ a {
 
 .enter, .end, .section, .hero, .work, .about, .contact {
   min-width: 100% !important;
-  scrollbar-width: none; 
+  scrollbar-width: none !important; 
 }
 
 .enter::-webkit-scrollbar,
@@ -269,7 +269,7 @@ a {
 .work::-webkit-scrollbar,
 .about::-webkit-scrollbar,
 .contact::-webkit-scrollbar {
-  display: none; 
+  display: none !important; 
 }
 
 
