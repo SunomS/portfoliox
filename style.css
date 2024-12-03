@@ -257,12 +257,14 @@ a {
 
 /****** selection ******/
 
-.enter,
-main,
-footer {
+.enter, .end {
   position: relative;
-  width: 100%;
-  z-index: 1;
+  min-width: 100% !important;
+  scrollbar-width: none;
+}
+
+.enter::-webkit-scrollbar , .end::-webkit-scrollbar {
+  display: none; 
 }
 
 .custom-btn {
