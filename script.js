@@ -250,16 +250,28 @@ const [
 ] = ['#hand-left', '#hand-right', '#titleGame', '#score-left', '#score-right', '#game-cta']
     .map(selector => document.querySelector(selector));
 
+const comment = document.querySelector('#comment'); 
 const buttons = document.querySelectorAll('[data-type]');
 const possibilities = Object.freeze({ 1: "rock", 2: 'paper', 3: 'scissor' });
 const outcomes = Object.freeze({ 1: "It's a Draw", 2: 'Try Again', 3: 'You Win!' });
+
 const state = {
     user: { lastModifier: 'scene__hand_rock', wins: 0 },
     opponent: { lastModifier: 'scene__hand_rock', wins: 0 }
 };
+
 let isGameCtaDisplayed = false;
 
-const getRandomFromObj = (obj) => Math.floor((Math.random() * Math.floor(Object.keys(obj).length) + 1));
+const comments = [
+    "Staying curious about emerging technologies allows me to adapt quickly in a rapidly evolving industry.",
+    "Preference: I like Figma’s Auto Layout because it saves time and keeps my designs responsive.",
+    "Philosophy: My design approach emphasizes simplicity, clarity, and user satisfaction.",
+    "Motivation: Feedback from users inspires me to refine my work and strive for continuous improvement.",
+    "Goal: I aim to collaborate with cross-functional teams to create products that solve real-world problems.",
+    "Fun fact: I once learned how to juggle three objects in under a week."
+];
+
+const getRandomFromObj = (obj) => Math.floor(Math.random() * Math.floor(Object.keys(obj).length) + 1);
 
 const getLogic = (outcomes, a, b) => a === b ? outcomes[1] : (((a - b + 3) % 3 === 1)) ? outcomes[2] : outcomes[3];
 
@@ -268,6 +280,7 @@ const getModifier = (modifier) => `scene__hand_${modifier}`;
 const displayGameCta = () => {
     if (!isGameCtaDisplayed) {
         gameCta.style.opacity = '1';
+        comment.style.opacity = '1'; 
         isGameCtaDisplayed = true;
     }
 };
@@ -297,6 +310,13 @@ const updateDOM = (opponentChoice, choiceDataType) => {
     scoreRight.textContent = state.opponent.wins;
     titleGame.textContent = outcome;
 
+    const randomIndex = Math.floor(Math.random() * comments.length);
+    comment.querySelector('p').textContent = comments[randomIndex];
+
+    comment.classList.remove('comment-animate');
+    void comment.offsetWidth; 
+    comment.classList.add('comment-animate');
+
     const partyElement = document.getElementById('party');
     if (outcome === 'You Win!') {
         partyElement.style.opacity = '1';
@@ -306,4 +326,3 @@ const updateDOM = (opponentChoice, choiceDataType) => {
 };
 
 buttons.forEach((button) => button.addEventListener('click', getOutcomeAndUpdateDOM));
-

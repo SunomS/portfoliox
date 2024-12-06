@@ -1120,6 +1120,35 @@ flex: 1;;
   }
 }
 
+
+.comment{
+  text-align: left;
+  position: absolute;
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 100px;
+  background-color: var(--background-color-1);
+  margin-top: -12rem;
+  padding: 16px;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.comment-animate {
+  animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
 @media (max-width: 767px) {
   .scene {
     display: flex;
@@ -1140,6 +1169,10 @@ flex: 1;;
     position: absolute; 
     bottom: 10%; 
     width: 100%; 
+  }
+
+  .comment{
+    display: none;
   }
   
 }
@@ -1219,3 +1252,4 @@ footer {
 
 
 /****** end ******/
+
