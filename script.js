@@ -264,14 +264,17 @@ let isGameCtaDisplayed = false;
 
 const comments = [
     "Staying curious about emerging technologies allows me to adapt quickly in a rapidly evolving industry.",
-    "Preference: I like Figma’s Auto Layout because it saves time and keeps my designs responsive.",
-    "Philosophy: My design approach emphasizes simplicity, clarity, and user satisfaction.",
-    "Motivation: Feedback from users inspires me to refine my work and strive for continuous improvement.",
-    "Goal: I aim to collaborate with cross-functional teams to create products that solve real-world problems.",
-    "Fun fact: I once learned how to juggle three objects in under a week."
+    "I like Figma’s Auto Layout because it saves time and keeps my designs responsive.",
+    "My design approach emphasizes simplicity, clarity, and user satisfaction.",
+    "Feedback from users inspires me to refine my work and strive for continuous improvement.",
+    "I aim to collaborate with cross-functional teams to create products that solve real-world problems.",
+    "Fun fact: I once learned how to juggle three objects in under a day."
 ];
 
-const getRandomFromObj = (obj) => Math.floor(Math.random() * Math.floor(Object.keys(obj).length) + 1);
+// Keep track of current comment index
+let currentCommentIndex = 0;
+
+const getRandomFromObj = (obj) => Math.floor((Math.random() * Math.floor(Object.keys(obj).length) + 1));
 
 const getLogic = (outcomes, a, b) => a === b ? outcomes[1] : (((a - b + 3) % 3 === 1)) ? outcomes[2] : outcomes[3];
 
@@ -310,9 +313,11 @@ const updateDOM = (opponentChoice, choiceDataType) => {
     scoreRight.textContent = state.opponent.wins;
     titleGame.textContent = outcome;
 
-    const randomIndex = Math.floor(Math.random() * comments.length);
-    comment.querySelector('p').textContent = comments[randomIndex];
+    // Update comment text in sequence
+    comment.querySelector('p').textContent = comments[currentCommentIndex];
+    currentCommentIndex = (currentCommentIndex + 1) % comments.length;
 
+    // Re-trigger animation
     comment.classList.remove('comment-animate');
     void comment.offsetWidth; 
     comment.classList.add('comment-animate');
