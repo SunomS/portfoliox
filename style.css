@@ -74,10 +74,10 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 24px;
   letter-spacing: 1px;
-  font-weight: 100;
-  font-family: "poppins";
+  font-weight: 500;
+  font-family: 'Dosis';
   color: var(--text-color-1);
 }
 
@@ -331,7 +331,7 @@ a {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.overlay-text h1 {
+.overlay-text h3 {
   font-size: 50px;
   letter-spacing: 2px;
   font-family: 'Allura';
@@ -1195,7 +1195,7 @@ flex: 1;;
   color: white;
 }
 
-.contact-id h1 {
+.contact-id h3 {
   color: var(--text-color-4);
   border-bottom: 2px solid white;
   padding-bottom: 8px;
