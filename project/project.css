@@ -189,6 +189,8 @@ a {
 @media (max-width: 767px) {
   .custom-navbar {
     padding: 4px 2px;
+    border-bottom: none;
+    box-shadow: var(--box-shadow);
   }
 
   .navbar-brand {
