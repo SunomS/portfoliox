@@ -259,12 +259,13 @@ a {
     position: relative;
     top: 0;
     left: 0;
-    max-width: 100%;
+    max-width: 750px;
     width: 100%;
     height: auto;
     border-right: none;
     overflow-y: visible; 
     border-right: none;
+    margin: 0 auto;
   }
 }
 
