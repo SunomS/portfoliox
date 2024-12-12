@@ -263,11 +263,11 @@ const state = {
 let isGameCtaDisplayed = false;
 
 const comments = [
-    "Fun fact: I once learned how to juggle three objects in under a day.",
+    "Let's play a best of three. In the meantime, I'll share something interesting.",
     "Staying curious about emerging technologies allows me to adapt quickly in a rapidly evolving industry.",
-    "I like Figma’s Auto Layout because it saves time and keeps my designs responsive.",
     "My design approach emphasizes simplicity, clarity, and user satisfaction.",
     "Feedback from users inspires me to refine my work and strive for continuous improvement.",
+    "I like Figma’s Auto Layout because it saves time and keeps my designs responsive.",
     "I aim to collaborate with cross-functional teams to create products that solve real-world problems."
 ];
 

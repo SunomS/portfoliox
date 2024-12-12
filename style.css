@@ -949,7 +949,7 @@ flex: 1;;
 
 .scene__score-board_right {
   background-color: var(--background-color-2);
-  max-height: 96%;
+  max-height: 98%;
   border-radius: 8px;
   flex: 1;
 }
@@ -958,8 +958,8 @@ flex: 1;;
   margin-bottom: 8px;
   font-size: 18px;
   padding: 8px 16px;
-  color: black;
-  background-color: white;
+  color: var(--text-color-1);
+  background-color: var(--background-color-1);
   border-radius: 16px;
   transition: transform 0.3s ease;
   z-index: 2;
@@ -1017,7 +1017,7 @@ flex: 1;;
 
 .scene-button{
   z-index: 2;
-  margin-top: 5%;
+  margin-top: 8%;
 }
 
 [data-type] {
@@ -1150,6 +1150,10 @@ flex: 1;;
 }
 
 @media (max-width: 767px) {
+  .game{
+    padding: 0 8px;
+  }
+
   .scene {
     display: flex;
     flex-direction: column;
@@ -1196,7 +1200,7 @@ flex: 1;;
 }
 
 .contact-id h3 {
-  color: var(--text-color-4);
+  color: white;
   border-bottom: 2px solid white;
   padding-bottom: 8px;
   margin-bottom: 24px;
