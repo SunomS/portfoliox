@@ -254,7 +254,7 @@ a {
   color: #0B65C2;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .sidebar {
     position: relative;
     top: 0;
@@ -332,7 +332,7 @@ a {
   background-color: var(--background-color-1);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .info {
     margin-top: 48px;
   }
