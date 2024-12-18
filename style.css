@@ -646,7 +646,6 @@ main .section.work {
 main .section.about {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   height: auto;
   padding: 16px;
 }
