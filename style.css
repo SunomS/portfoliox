@@ -339,29 +339,38 @@ a {
   border-bottom: 1px solid var(--text-color-1);
 }
 
-.overlay-text .fa-solid {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  margin: 10px auto;
-  color: var(--text-color-1);
-  animation: bounce 2s ease-in-out infinite;
+.scroll-downs {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width :32px;
+  height: 56px;
 }
-
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  30% {
-    transform: translateY();
-  }
-
-  60% {
-    transform: translateY(8px);
-  }
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid var(--text-color-1);
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: var(--text-color-1);
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
 }
 
 /****** hero ******/
@@ -581,6 +590,17 @@ main .section.work {
   align-items: center;
   justify-content: flex-start;
   background-color: var(--background-color-2);
+  margin: 16px 0;
+}
+
+#work .work-4 {
+  width: 100%;
+  height: auto;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--background-color-2);
 }
 
 .carousel-row {
@@ -614,7 +634,7 @@ main .section.work {
 }
 
 .work-item:first-child {
-  width: 50vw;
+  width: 40vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -636,6 +656,11 @@ main .section.work {
 }
 
 @media (max-width: 767px) {
+
+  .work-item:first-child {
+    width: 50vw;
+  }
+
   #work .section-title {
     font-size: 16px !important;
   }
@@ -1119,35 +1144,6 @@ flex: 1;;
   }
 }
 
-
-.comment{
-  text-align: left;
-  position: absolute;
-  max-width: 300px;
-  min-width: 300px;
-  min-height: 100px;
-  background-color: var(--background-color-1);
-  margin-top: -12rem;
-  padding: 16px;
-  border-radius: 8px;
-  opacity: 0;
-}
-
-.comment-animate {
-  animation: slideUp 1s ease;
-}
-
-@keyframes slideUp {
-  0% {
-      transform: translateY(20px);
-      opacity: 0;
-  }
-  100% {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
 @media (max-width: 767px) {
   .game{
     padding: 0 8px;
@@ -1172,10 +1168,6 @@ flex: 1;;
     position: absolute; 
     bottom: 10%; 
     width: 100%; 
-  }
-
-  .comment{
-    display: none;
   }
   
 }

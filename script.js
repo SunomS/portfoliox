@@ -250,7 +250,6 @@ const [
 ] = ['#hand-left', '#hand-right', '#titleGame', '#score-left', '#score-right', '#game-cta']
     .map(selector => document.querySelector(selector));
 
-const comment = document.querySelector('#comment'); 
 const buttons = document.querySelectorAll('[data-type]');
 const possibilities = Object.freeze({ 1: "rock", 2: 'paper', 3: 'scissor' });
 const outcomes = Object.freeze({ 1: "It's a Draw", 2: 'Try Again', 3: 'You Win!' });
@@ -262,35 +261,24 @@ const state = {
 
 let isGameCtaDisplayed = false;
 
-const comments = [
-    "Let's play a best of three. In the meantime, I'll share something interesting.",
-    "Staying curious about emerging technologies allows me to adapt quickly in a rapidly evolving industry.",
-    "My design approach emphasizes simplicity, clarity, and user satisfaction.",
-    "Feedback from users inspires me to refine my work and strive for continuous improvement.",
-    "I like Figma’s Auto Layout because it saves time and keeps my designs responsive.",
-    "I aim to collaborate with cross-functional teams to create products that solve real-world problems."
-];
+const getRandomFromObj = (obj) =>
+    Math.floor((Math.random() * Math.floor(Object.keys(obj).length) + 1));
 
-// Keep track of current comment index
-let currentCommentIndex = 0;
-
-const getRandomFromObj = (obj) => Math.floor((Math.random() * Math.floor(Object.keys(obj).length) + 1));
-
-const getLogic = (outcomes, a, b) => a === b ? outcomes[1] : (((a - b + 3) % 3 === 1)) ? outcomes[2] : outcomes[3];
+const getLogic = (outcomes, a, b) =>
+    a === b ? outcomes[1] : (((a - b + 3) % 3 === 1)) ? outcomes[2] : outcomes[3];
 
 const getModifier = (modifier) => `scene__hand_${modifier}`;
 
 const displayGameCta = () => {
     if (!isGameCtaDisplayed) {
         gameCta.style.opacity = '1';
-        comment.style.opacity = '1'; 
         isGameCtaDisplayed = true;
     }
 };
 
 const getOutcomeAndUpdateDOM = (e) => {
     if (!isGameCtaDisplayed) {
-        displayGameCta(); 
+        displayGameCta();
     }
 
     const choiceDataType = Number(e.target.getAttribute('data-type'));
@@ -301,33 +289,25 @@ const getOutcomeAndUpdateDOM = (e) => {
 const updateDOM = (opponentChoice, choiceDataType) => {
     userHand.classList.remove(state.user.lastModifier);
     opponentHand.classList.remove(state.opponent.lastModifier);
+
     state.user.lastModifier = getModifier(possibilities[choiceDataType]);
     state.opponent.lastModifier = getModifier(possibilities[opponentChoice]);
+
     userHand.classList.add(state.user.lastModifier);
     opponentHand.classList.add(state.opponent.lastModifier);
 
     const outcome = getLogic(outcomes, opponentChoice, choiceDataType);
-    state.user.wins = outcome === 'You Win!' ? state.user.wins + 1 : state.user.wins;
-    state.opponent.wins = outcome === 'Try Again' ? state.opponent.wins + 1 : state.opponent.wins;
+
+    if (outcome === 'You Win!') state.user.wins++;
+    if (outcome === 'Try Again') state.opponent.wins++;
+
     scoreLeft.textContent = state.user.wins;
     scoreRight.textContent = state.opponent.wins;
     titleGame.textContent = outcome;
 
-    // Update comment text in sequence
-    comment.querySelector('p').textContent = comments[currentCommentIndex];
-    currentCommentIndex = (currentCommentIndex + 1) % comments.length;
-
-    // Re-trigger animation
-    comment.classList.remove('comment-animate');
-    void comment.offsetWidth; 
-    comment.classList.add('comment-animate');
-
     const partyElement = document.getElementById('party');
-    if (outcome === 'You Win!') {
-        partyElement.style.opacity = '1';
-    } else {
-        partyElement.style.opacity = '0';
-    }
+    partyElement.style.opacity = (outcome === 'You Win!') ? '1' : '0';
 };
 
 buttons.forEach((button) => button.addEventListener('click', getOutcomeAndUpdateDOM));
+
