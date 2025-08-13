@@ -139,7 +139,7 @@ a {
   z-index: 999;
   padding: 4px 24px;
   background-color: var(--background-color-2);
-  border-bottom: 0.5px solid var(--text-color-3);
+  border-bottom: 2px solid var(--text-color-4);
 }
 
 .nav-item {
@@ -218,7 +218,7 @@ a {
   overflow-y: auto; 
   color: var(--text-color-1); 
   background-color: var(--background-color-2); 
-  border-right: 0.5px solid var(--text-color-3);
+  border-right: 2px solid var(--text-color-4);
 }
 
 .brand{
@@ -271,25 +271,6 @@ a {
   }
 }
 
-@media screen and (min-width: 1800px) {
-  .sidebar::before {
-    --size: 48px;
-    --line: var(--text-color-5), transparent;
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 310px; 
-    height: 100vh;
-    width: calc(100vw - 310px);
-    background:
-      linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
-      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
-    mask: linear-gradient(-25deg, transparent 32%, var(--background-color-2));
-    pointer-events: none;
-    z-index: -1 !important;
-  }
-}
-
 /****** Project-start ******/
 
 .Project-start {
@@ -332,7 +313,20 @@ a {
   border-radius: 8px;
   margin: 8px 0;
   background-color: var(--background-color-1);
+  opacity: 1;
 }
+
+.link-web, 
+.link-web a {
+  color: #0B65C2;
+  transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.link-web:hover, 
+.link-web:hover a {
+  padding-left: 16px;
+}
+
 
 @media (max-width: 992px) {
   .info {
