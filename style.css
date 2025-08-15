@@ -556,7 +556,6 @@ main .section.work {
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 100vh;
 }
 
 #work .work-1 {
@@ -672,6 +671,35 @@ main .section.about {
   width: 100%;
   height: auto;
   padding: 16px;
+  background-color: var(--background-color-1);
+  overflow: hidden;
+}
+
+main .section.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--text-color-4), var(--background-color-1)); 
+  clip-path: polygon(
+    0% 20%,
+    15% 40%,
+    30% 25%,
+    50% 50%,
+    65% 30%,
+    80% 45%,
+    100% 25%,
+    100% 0%,
+    0% 0%
+  );
+  z-index: 0;
+}
+
+main .section.about > * {
+  position: relative;
+  z-index: 1; /* keeps text/images above the mountain shadow */
 }
 
 #about .grid-container {
@@ -680,7 +708,9 @@ main .section.about {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   width: 100%;
+  max-width: 2000px;
   height: auto;
+  margin: 0 auto;
 }
 
 #about .grid-item {
@@ -696,12 +726,13 @@ main .section.about {
 }
 
 #about .grid-item-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 4px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 8px;
 }
+
 
 #about .grid-item-box-img {
   padding: 16px 0;
@@ -971,7 +1002,7 @@ flex: 1;;
 }
 
 .scene__score-board_right {
-  background-color: var(--background-color-2);
+  background-color: var(--background-color-1);
   max-height: 98%;
   border-radius: 8px;
   flex: 1;
