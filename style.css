@@ -501,7 +501,7 @@ a {
   font-family: 'Dosis';
   text-transform: none;
   padding-bottom: 8px;
-  border-bottom: 0.5px solid var(--text-color-2);
+  border-bottom: 1px solid var(--text-color-3);
 }
 
 .center-text p {
