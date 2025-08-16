@@ -310,4 +310,3 @@ const updateDOM = (opponentChoice, choiceDataType) => {
 };
 
 buttons.forEach((button) => button.addEventListener('click', getOutcomeAndUpdateDOM));
-
