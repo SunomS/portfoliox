@@ -263,6 +263,7 @@ a {
 .hero,
 .work,
 .about,
+.blog,
 .contact,
 .pin-spacer {
   min-width: 100%;
@@ -276,6 +277,7 @@ a {
 .hero::-webkit-scrollbar,
 .work::-webkit-scrollbar,
 .about::-webkit-scrollbar,
+.blog::-webkit-scrollbar,
 .contact::-webkit-scrollbar,
 .pin-spacer::-webkit-scrollbar {
   display: none;
@@ -444,6 +446,8 @@ a {
   opacity: 1;
 }
 
+/****** hero top ******/
+
 .top-text {
   position: absolute;
   top: 4%;
@@ -463,6 +467,8 @@ a {
   font-size: 26px;
 }
 
+/****** hero left ******/
+
 .left-side {
   position: absolute;
   top: 50%;
@@ -477,6 +483,8 @@ a {
   color: var(--text-color-3);
 }
 
+/****** hero center******/
+
 .center-text {
   position: absolute;
   top: 50%;
@@ -490,25 +498,64 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 42px;
+  font-size: 32px;
   font-family: "poppins";
-  padding-bottom: 16px;
-}
-
-.center-text h2 {
-  color: var(--text-color-1);
-  font-size: 28px;
-  font-family: 'Dosis';
-  text-transform: none;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--text-color-3);
 }
 
-.center-text p {
-  color: var(--text-color-2);
-  font-size: 14px;
-  font-family: "poppins";
+.my-container {
+  width: 400px;
+  height: 48px;
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
 }
+
+.slide-bar {
+  position: absolute;
+  top: 0;
+  left: 64px;
+  transform: rotateZ(0deg);
+  width: 2px;
+  height: 40px;
+  z-index: 10;
+}
+
+.bar {
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--text-color-2);
+}
+
+.text-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: var(--background-color-2);
+}
+
+.text-block h2 {
+  position: relative;
+  perspective: 500px;
+  transform-style: preserve-3d;
+  color: var(--text-color-1);
+}
+
+#textone {
+  z-index: 6;
+  clip-path: polygon(0 0, 18% 0, 8% 100%, 0% 100%);
+}
+
+#texttwo {
+  z-index: 4;
+  clip-path: polygon(0 0, 91% 0, 81% 100%, 0% 100%);
+}
+
+/****** hero right******/
 
 .right-side {
   position: absolute;
@@ -528,6 +575,8 @@ a {
   color: var(--text-color-1);
   font-size: 12px;
 }
+
+/****** hero bottom ******/
 
 .bottom-side {
   position: absolute;
@@ -554,6 +603,7 @@ a {
   height: 64px;
   width: auto;
   filter: grayscale(100%);
+  opacity: 0.5;
 }
 
 @keyframes scroll {
@@ -576,22 +626,6 @@ a {
 
   .left-side {
     display: none;
-  }
-
-  .center-text {
-    position: absolute;
-    top: 50%;
-    left: 16%;
-    transform: translate(-16%, -50%);
-    text-align: left;
-  }
-
-  .center-text h1 {
-    font-size: 32px;
-  }
-
-  .center-text h2 {
-    font-size: 24px;
   }
 
   .right-side {
@@ -766,7 +800,6 @@ main .section.about::before {
 main .section.about>* {
   position: relative;
   z-index: 1;
-  /* keeps text/images above the mountain shadow */
 }
 
 #about .grid-container {
@@ -1360,5 +1393,11 @@ footer {
   background-color: transparent;
 }
 
-
-/****** end ******/
+/****** blog-item ******/
+main .section.blog {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: var(--background-color-1);
+  overflow: hidden;
+}
