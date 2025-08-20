@@ -130,6 +130,22 @@ window.addEventListener("load", () => {
         }
     });
 
+    // Bento Cards Animation
+    gsap.utils.toArray(".bento-card").forEach((card, i) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 300,
+            duration: 1,
+            delay: i * 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top top",
+                toggleActions: "play none none none"
+            }
+        });
+    });
+
     // Animate Footer section
     const contacts = document.querySelectorAll(".contact");
     const contactCards = document.querySelectorAll(".contact-card");
@@ -350,7 +366,7 @@ slideTL
         ease: "back.inOut(0.8)"
     })
     .to('#bar', 1, {
-        y: 200,
+        y: 5,
         scaleY: 0.1,
         ease: "back.in"
     });
