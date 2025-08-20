@@ -852,6 +852,7 @@ main .section.about>* {
   border: 2px solid var(--text-color-3);
   scale: 0.5 !important;
 }
+
 #about .grid-item-skill {
   width: 100%;
   height: 100%;
@@ -954,26 +955,29 @@ main .section.blog {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: var(--text-color-2);
   font-weight: normal;
   font-size: 16px;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   transition: color 0.3s ease;
-}
-
-#blog a .fa-brands {
-  color: var(--text-color-3);
 }
 
 #blog a .fa-arrow-right-long {
   transition: transform 0.3s ease;
-}
-
-#blog a:hover {
-  color: var(--text-color-1);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #blog a:hover .fa-arrow-right-long {
   transform: translateX(16px);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #blog .top {
