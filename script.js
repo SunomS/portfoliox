@@ -351,7 +351,7 @@ slideTL
         ease: "back.out"
     })
     .to('#slidebar', 1.5, {
-        x: 280,
+        x: 160,
         delay: 0.5,
         ease: "back.inOut(0.8)"
     })
@@ -361,7 +361,7 @@ slideTL
         ease: "back.inOut(0.8)"
     })
     .to('#slidebar', 1.5, {
-        x: 280,
+        x: 160,
         delay: 0.5,
         ease: "back.inOut(0.8)"
     })

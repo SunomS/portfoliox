@@ -116,7 +116,7 @@ p {
   line-height: 24px;
   font-weight: 100;
   font-family: sans-serif;
-  color: var(--text-color-2);
+  color: var(--text-color-1);
 }
 
 a {
@@ -502,6 +502,7 @@ a {
   font-size: 24px;
   font-family: "poppins";
   padding-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .my-container {
@@ -516,7 +517,7 @@ a {
 .slide-bar {
   position: absolute;
   top: 0;
-  left: 64px;
+  left: 120px;
   transform: rotateZ(0deg);
   width: 2px;
   height: 40px;
@@ -1147,8 +1148,13 @@ main .section.blog {
     gap: 8px;
   }
 
+
   #blog .grid-cell-2 {
     padding: 8px;
+  }
+
+  #blog .grid-cell-2:last-child {
+    display: none;
   }
 
   #blog .grid-cell-2 i {
@@ -1208,6 +1214,8 @@ main .section.blog {
 
 .game {
   padding: 0 16px;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .scene {
