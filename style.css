@@ -1277,7 +1277,7 @@ main .section.blog {
 #party {
   position: absolute;
   margin-top: -100px;
-  color: var(--background-color-1);
+  color: var(--background-color-2);
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   animation: partyBounce 0.8s ease-in-out infinite;
