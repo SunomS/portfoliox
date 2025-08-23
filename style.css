@@ -640,7 +640,7 @@ a {
     transform: translate(50%, -50%) rotate(90deg);
   }
   .bottom-side {
-  bottom: 8%;
+  bottom: 4%;
 }
 
   .marquee-group {
@@ -1169,7 +1169,6 @@ main .section.blog {
   #blog .bento-card.figma {
     min-height: auto;
     padding:32px 16px;
-    margin-bottom: 48px;
   }
 }
 
@@ -1214,7 +1213,7 @@ main .section.blog {
 
 .game {
   padding: 0 16px;
-  max-width: 2000px;
+  max-width: 2032px;
   margin: 0 auto;
 }
 
@@ -1296,17 +1295,10 @@ main .section.blog {
   }
 }
 
-.scene__score-board_left {
-  background-color: transparent;
-  max-height: 96%;
-  border-radius: 8px;
-  flex: 1;
-  ;
-}
-
-.scene__score-board_right {
-  background-color: var(--background-color-1);
-  max-height: 98%;
+.scene__score-board_left, .scene__score-board_right {
+  margin-top: 16px;
+  background-color: var(--background-color-2);
+  max-height: 94%;
   border-radius: 8px;
   flex: 1;
 }
@@ -1490,7 +1482,7 @@ main .section.blog {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .game {
     padding: 0 8px;
   }
@@ -1503,7 +1495,7 @@ main .section.blog {
   }
 
   .game-title {
-    margin-top: 32px;
+    margin-top: 56px;
   }
 
   .scene-button {
@@ -1562,7 +1554,7 @@ main .section.blog {
   color: white;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .contact-id {
     margin: 0 auto;
     width: 98%;
