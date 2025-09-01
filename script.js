@@ -136,11 +136,11 @@ window.addEventListener("load", () => {
             opacity: 0,
             y: 50,
             duration: 1,
-            delay: i * 0.4,
+            delay: i * 0.6,
             ease: "power1.out",
             scrollTrigger: {
                 trigger: card,
-                start: "top top",
+                start: "50% 60%",
                 toggleActions: "play none none none"
             }
         });
