@@ -134,10 +134,10 @@ window.addEventListener("load", () => {
     gsap.utils.toArray(".bento-card").forEach((card, i) => {
         gsap.from(card, {
             opacity: 0,
-            y: 300,
+            y: 50,
             duration: 1,
-            delay: i * 0.2,
-            ease: "power3.out",
+            delay: i * 0.4,
+            ease: "power2.inOut",
             scrollTrigger: {
                 trigger: card,
                 start: "top top",
@@ -352,7 +352,7 @@ slideTL
     })
     .to('#slidebar', 1.5, {
         x: 160,
-        delay: 0.5,
+        delay: 0.45,
         ease: "back.inOut(0.8)"
     })
     .to('#slidebar', 1.5, {

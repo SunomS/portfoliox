@@ -114,15 +114,15 @@ p {
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 24px;
-  font-weight: 100;
+  font-weight: 300;
   font-family: sans-serif;
-  color: var(--text-color-1);
+  color: var(--text-color-2);
 }
 
 a {
   font-size: 18px;
   letter-spacing: 1px;
-  font-weight: 300;
+  font-weight: 500;
   font-family: 'Dosis';
   line-height: 26px;
   cursor: pointer;
@@ -549,12 +549,12 @@ a {
 
 #textone {
   z-index: 6;
-  clip-path: polygon(0 0, 18% 0, 8% 100%, 0% 100%);
+  clip-path: polygon(0 0, 24% 0, 8% 100%, 0% 100%);
 }
 
 #texttwo {
   z-index: 4;
-  clip-path: polygon(0 0, 91% 0, 81% 100%, 0% 100%);
+  clip-path: polygon(0 0, 88% 0, 80% 100%, 0% 100%);
 }
 
 /****** hero right******/
@@ -956,7 +956,7 @@ main .section.blog {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  font-weight: normal;
+  font-weight: 800;
   font-size: 16px;
   background: var(--text-gradient);
   -webkit-background-clip: text;
