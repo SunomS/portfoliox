@@ -131,20 +131,25 @@ window.addEventListener("load", () => {
     });
 
     // Bento Cards Animation
-    gsap.utils.toArray(".bento-card").forEach((card, i) => {
-        gsap.from(card, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            delay: i * 0.6,
-            ease: "power1.out",
-            scrollTrigger: {
-                trigger: card,
-                start: "50% 60%",
-                toggleActions: "play none none none"
-            }
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+        gsap.utils.toArray(".bento-card").forEach((card, i) => {
+            gsap.from(card, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                delay: i * 0.6,
+                ease: "power1.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top top",
+                    toggleActions: "play none none none"
+                }
+            });
         });
     });
+
 
     // Animate Footer section
     const contacts = document.querySelectorAll(".contact");
@@ -327,7 +332,6 @@ const updateDOM = (opponentChoice, choiceDataType) => {
 
 buttons.forEach((button) => button.addEventListener('click', getOutcomeAndUpdateDOM));
 
-//Other animation shorts
 //hero- text 
 
 const slideTL = gsap.timeline();
@@ -374,7 +378,7 @@ slideTL
 maskTL
     .to('#textone', 1.5, {
         ease: "back.inOut(0.8)",
-        "clip-path": "polygon(0 0, 91% 0, 81% 100%, 0% 100%)",
+        "clip-path": "polygon(0 0, 88% 0, 80% 100%, 0% 100%)",
         onComplete: () => {
             gsap.set('#texttwo', { opacity: 1 });
         }
@@ -382,7 +386,7 @@ maskTL
     .to('#textone', 1.5, {
         delay: 0.5,
         ease: "back.inOut(0.8)",
-        "clip-path": "polygon(0 0, 18% 0, 8% 100%, 0% 100%)",
+        "clip-path": "polygon(0 0, 24% 0, 8% 100%, 0% 100%)",
         onComplete: () => {
             gsap.set('#textone h2', { opacity: 0 });
         }
@@ -390,7 +394,7 @@ maskTL
     .to('#textone', 1.5, {
         delay: 0.5,
         ease: "back.inOut(0.8)",
-        "clip-path": "polygon(0 0, 91% 0, 81% 100%, 0% 100%)"
+        "clip-path": "polygon(0 0, 88% 0, 80% 100%, 0% 100%)"
     });
 
 mainTL
