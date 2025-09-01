@@ -137,7 +137,7 @@ window.addEventListener("load", () => {
             y: 50,
             duration: 1,
             delay: i * 0.4,
-            ease: "power2.inOut",
+            ease: "power1.out",
             scrollTrigger: {
                 trigger: card,
                 start: "top top",
