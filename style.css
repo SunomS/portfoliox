@@ -111,12 +111,12 @@ h6 {
 }
 
 p {
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 1px;
   line-height: 24px;
   font-weight: 300;
-  font-family: "poppins";
-  color: var(--text-color-3);
+  font-family: sans-serif;
+  color: var(--text-color-2);
 }
 
 a {
@@ -500,7 +500,7 @@ a {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
-  font-family: "poppins";
+  font-family: sans-serif;
   padding-bottom: 8px;
   text-transform: uppercase;
 }
