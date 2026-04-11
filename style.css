@@ -181,7 +181,7 @@ a {
   top: 0;
   width: 100%;
   z-index: 999;
-  padding: 8px 24px;
+  padding: 4px 24px;
   transform: translateY(-100%);
   transition: transform 0.8s ease-out;
   background-color: var(--background-color-2);
@@ -548,14 +548,13 @@ a {
 
 #textone {
   z-index: 6;
-  clip-path: polygon(0 0, 24% 0, 8% 100%, 0% 100%);
+  clip-path: polygon(0 0, 24% 0, 24% 100%, 0% 100%);
 }
 
 #texttwo {
   z-index: 4;
-  clip-path: polygon(0 0, 88% 0, 80% 100%, 0% 100%);
+  clip-path: polygon(0 0, 88% 0, 88% 100%, 0% 100%);
 }
-
 /****** hero right******/
 
 .right-side {
@@ -893,7 +892,7 @@ main .section.about>* {
   }
 
   #about .grid-item {
-    padding: 32px 16px;
+    padding: 32px 24px 24px 24px;
     min-height: auto;
   }
 
@@ -941,7 +940,7 @@ main .section.blog {
   align-items: flex-start;
   position: relative;
   min-height: 16rem;
-  padding: 32px;
+  padding: 40px;
   background-color: var(--background-color-2);
   color: var(--text-color-1);
   text-wrap: balance;
@@ -1101,7 +1100,7 @@ main .section.blog {
   #blog .bento-card {
     grid-area: auto !important;
     width: 100%;
-    padding: 32px 16px;
+    padding: 32px 24px 24px 24px;
     min-height: auto;
   }
 
@@ -1160,11 +1159,10 @@ main .section.blog {
   /* Shot and Figma card adjustments */
   #blog .bento-card.shot{
     min-height: 24rem;
-     padding:32px 16px;
   }
+  
   #blog .bento-card.figma {
     min-height: auto;
-    padding:32px 16px;
   }
 }
 

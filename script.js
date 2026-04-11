@@ -378,7 +378,8 @@ slideTL
 maskTL
     .to('#textone', 1.5, {
         ease: "back.inOut(0.8)",
-        "clip-path": "polygon(0 0, 88% 0, 80% 100%, 0% 100%)",
+        // Changed 80% to 88% to make it straight
+        "clip-path": "polygon(0 0, 88% 0, 88% 100%, 0% 100%)", 
         onComplete: () => {
             gsap.set('#texttwo', { opacity: 1 });
         }
@@ -386,7 +387,8 @@ maskTL
     .to('#textone', 1.5, {
         delay: 0.5,
         ease: "back.inOut(0.8)",
-        "clip-path": "polygon(0 0, 24% 0, 8% 100%, 0% 100%)",
+        // Changed 8% to 24% to make it straight
+        "clip-path": "polygon(0 0, 24% 0, 24% 100%, 0% 100%)",
         onComplete: () => {
             gsap.set('#textone h2', { opacity: 0 });
         }
@@ -394,7 +396,8 @@ maskTL
     .to('#textone', 1.5, {
         delay: 0.5,
         ease: "back.inOut(0.8)",
-        "clip-path": "polygon(0 0, 88% 0, 80% 100%, 0% 100%)"
+        // Changed 80% to 88% to make it straight
+        "clip-path": "polygon(0 0, 88% 0, 88% 100%, 0% 100%)"
     });
 
 mainTL

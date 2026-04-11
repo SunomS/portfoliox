@@ -137,7 +137,7 @@ a {
   top: 0;
   width: 100%;
   z-index: 999;
-  padding: 4px 24px;
+  padding: 2px 24px;
   background-color: var(--background-color-2);
   border-bottom: 2px solid var(--text-color-4);
 }
