@@ -1503,7 +1503,104 @@ main .section.blog {
   }
 
 }
+/****** Chat-bot ******/
 
+#chat-container {
+    position: fixed;
+    bottom: 14%;
+    right: 4%;
+    width: 24%;
+    height: 80%;
+    background: var(--background-color-1);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    transform-origin: bottom right;
+    will-change: transform, opacity;
+
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* CHAT TRIGGER BUTTON */
+#chat-trigger {
+    position: fixed;
+    bottom: 6%;
+    right: 4%;
+    width: 60px;
+    height: 60px;
+    background: var(--background-color-4);
+    color: var(--text-color-4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    border: none;
+}
+
+/* MOBILE POSITION ADJUST */
+@media (max-width: 991px) {
+
+   #chat-container {
+        bottom: 14%;
+        right: 5%;
+        width: 90%;
+        height: 80%;
+
+        /* hidden by default on mobile */
+        opacity: 0;
+        transform: scale(0.8);
+        pointer-events: none;
+        border-radius: 12px;
+    }
+
+    #chat-trigger {
+        bottom: 4%;
+        right: 5%;
+    }
+}
+
+/* ICON INSIDE BUTTON */
+#chat-trigger svg {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: currentColor;
+}
+
+/* IFRAME CHAT */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* LOADING OVERLAY */
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--background-color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+/* ICON TOGGLE STATE */
+.hidden-icon {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.5);
+}
 /****** contact-card-2 ******/
 
 .contact-card-2 {
@@ -1576,5 +1673,7 @@ footer {
   color: var(--text-color-1);
   background-color: transparent;
 }
+
+
 
 /****** END ******/

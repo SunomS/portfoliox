@@ -379,7 +379,7 @@ maskTL
     .to('#textone', 1.5, {
         ease: "back.inOut(0.8)",
         // Changed 80% to 88% to make it straight
-        "clip-path": "polygon(0 0, 88% 0, 88% 100%, 0% 100%)", 
+        "clip-path": "polygon(0 0, 88% 0, 88% 100%, 0% 100%)",
         onComplete: () => {
             gsap.set('#texttwo', { opacity: 1 });
         }
@@ -403,3 +403,155 @@ maskTL
 mainTL
     .add(slideTL)
     .add(maskTL, 1.5);
+
+// Chat Widget
+
+const container = document.getElementById('chat-container');
+const trigger = document.getElementById('chat-trigger');
+const closeIcon = document.getElementById('close-icon');
+const openIcon = document.getElementById('open-icon');
+const loading = document.getElementById('loading');
+
+let isOpen = true;
+
+// Hide loader
+function hideLoader() {
+    gsap.to(loading, {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+            loading.style.display = 'none';
+        }
+    });
+}
+window.hideLoader = hideLoader;
+
+// Swap icons
+function swapIcon(hideEl, showEl) {
+    gsap.to(hideEl, {
+        opacity: 0,
+        scale: 0.5,
+        duration: 0.2,
+        onComplete: () => {
+            hideEl.classList.add('hidden-icon');
+        }
+    });
+
+    showEl.classList.remove('hidden-icon');
+
+    gsap.fromTo(
+        showEl,
+        { opacity: 0, scale: 0.5 },
+        { opacity: 1, scale: 1, duration: 0.2 }
+    );
+}
+
+// Open chat
+function openChat() {
+    container.style.pointerEvents = 'auto';
+
+    gsap.to(container, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: "back.out(1.4)"
+    });
+
+    swapIcon(openIcon, closeIcon);
+}
+
+// Close chat
+function closeChat() {
+    gsap.to(container, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.4,
+        ease: "power2.in",
+        onComplete: () => {
+            container.style.pointerEvents = 'none';
+        }
+    });
+
+    swapIcon(closeIcon, openIcon);
+}
+
+// Toggle
+function toggleChat() {
+    if (isOpen) {
+        closeChat();
+    } else {
+        openChat();
+    }
+
+    isOpen = !isOpen;
+}
+
+// Trigger click
+trigger.addEventListener('click', toggleChat);
+
+// Hover effect
+trigger.addEventListener('mouseenter', () => {
+    gsap.to(trigger, {
+        scale: 1.1,
+        duration: 0.2,
+        overwrite: true
+    });
+});
+
+trigger.addEventListener('mouseleave', () => {
+    gsap.to(trigger, {
+        scale: 1,
+        duration: 0.2,
+        overwrite: true
+    });
+});
+
+// Hide initially (before scroll trigger)
+gsap.set([container, trigger], { display: 'none' });
+
+ScrollTrigger.create({
+    trigger: '.end',
+    start: 'top top',
+    end: 'bottom top',
+    onEnter: () => {
+        gsap.set([container, trigger], { display: 'block' });
+
+        setInitialState(); // IMPORTANT
+    }
+});
+
+// 🔥 RESPONSIVE STATE CONTROL
+
+function setInitialState() {
+    if (window.innerWidth <= 991) {
+        // MOBILE / TAB → CLOSED
+        isOpen = false;
+
+        gsap.set(container, {
+            opacity: 0,
+            scale: 0.8,
+            pointerEvents: 'none'
+        });
+
+        openIcon.classList.remove('hidden-icon');
+        closeIcon.classList.add('hidden-icon');
+
+    } else {
+        // DESKTOP → OPEN
+        isOpen = true;
+
+        gsap.set(container, {
+            opacity: 1,
+            scale: 1,
+            pointerEvents: 'auto'
+        });
+
+        closeIcon.classList.remove('hidden-icon');
+        openIcon.classList.add('hidden-icon');
+    }
+}
+
+// Run on resize
+window.addEventListener('resize', () => {
+    setInitialState();
+});
