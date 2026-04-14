@@ -520,7 +520,7 @@ ScrollTrigger.create({
     }
 });
 
-// 🔥 RESPONSIVE STATE CONTROL
+// RESPONSIVE STATE CONTROL
 
 function setInitialState() {
     if (window.innerWidth <= 991) {

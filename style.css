@@ -555,6 +555,7 @@ a {
   z-index: 4;
   clip-path: polygon(0 0, 88% 0, 88% 100%, 0% 100%);
 }
+
 /****** hero right******/
 
 .right-side {
@@ -628,12 +629,12 @@ a {
   }
 
   .center-text {
-  top: 40%;
-}
+    top: 40%;
+  }
 
-  .center-text h1{
-  font-size: 24px;
-}
+  .center-text h1 {
+    font-size: 24px;
+  }
 
   .right-side {
     position: absolute;
@@ -641,9 +642,10 @@ a {
     right: 0;
     transform: translate(50%, -50%) rotate(90deg);
   }
+
   .bottom-side {
-  bottom: 4%;
-}
+    bottom: 4%;
+  }
 
   .marquee-group {
     gap: 4rem;
@@ -853,8 +855,8 @@ main .section.about>* {
 
 #about .grid-skill-li {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 8px; 
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
   width: 100%;
   height: 100%;
 }
@@ -864,8 +866,8 @@ main .section.about>* {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 24px;
-  height: 100%; 
-  width: 100%; 
+  height: 100%;
+  width: 100%;
 }
 
 #about .grid-cell .fa-solid {
@@ -897,15 +899,15 @@ main .section.about>* {
   }
 
   #about .grid-cell {
-  gap: 0;
-  padding: 8px 0px;
-}
+    gap: 0;
+    padding: 8px 0px;
+  }
 
   #about .grid-skill-li {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 0px;
-}
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0px;
+  }
 }
 
 /****** blog-item ******/
@@ -995,7 +997,7 @@ main .section.blog {
   gap: 16px;
   width: 100%;
   height: 100%;
-  padding:16px 0;
+  padding: 16px 0;
 }
 
 #blog .tl-cell {
@@ -1029,9 +1031,9 @@ main .section.blog {
 
 #blog .grid-logo-li {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  grid-template-rows: repeat(2, 1fr);   
-  gap: 16px; 
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
   width: 100%;
   height: 100%;
 }
@@ -1065,7 +1067,7 @@ main .section.blog {
 
 #blog .bento-card.shot h2 {
   margin: 0;
-  color: var(--text-color-1); 
+  color: var(--text-color-1);
 }
 
 /* Figma card */
@@ -1077,6 +1079,7 @@ main .section.blog {
 }
 
 @media (max-width: 991px) {
+
   /* Section padding */
   main .section.blog {
     padding: 0 8px;
@@ -1157,10 +1160,10 @@ main .section.blog {
   }
 
   /* Shot and Figma card adjustments */
-  #blog .bento-card.shot{
+  #blog .bento-card.shot {
     min-height: 24rem;
   }
-  
+
   #blog .bento-card.figma {
     min-height: auto;
   }
@@ -1289,7 +1292,8 @@ main .section.blog {
   }
 }
 
-.scene__score-board_left, .scene__score-board_right {
+.scene__score-board_left,
+.scene__score-board_right {
   margin-top: 16px;
   background-color: var(--background-color-2);
   max-height: 94%;
@@ -1503,104 +1507,98 @@ main .section.blog {
   }
 
 }
+
 /****** Chat-bot ******/
 
 #chat-container {
-    position: fixed;
-    bottom: 14%;
-    right: 4%;
-    width: 24%;
-    height: 80%;
-    background: var(--background-color-1);
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  position: fixed;
+  bottom: 14%;
+  right: 4%;
+  width: 24%;
+  height: 80%;
+  background: var(--background-color-1);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
-    transform-origin: bottom right;
-    will-change: transform, opacity;
+  transform-origin: bottom right;
+  will-change: transform, opacity;
 
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
-/* CHAT TRIGGER BUTTON */
 #chat-trigger {
-    position: fixed;
-    bottom: 6%;
-    right: 4%;
-    width: 60px;
-    height: 60px;
-    background: var(--background-color-4);
-    color: var(--text-color-4);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1001;
-    border: none;
+  position: fixed;
+  bottom: 6%;
+  right: 4%;
+  width: 60px;
+  height: 60px;
+  background: var(--background-color-4);
+  color: var(--text-color-4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  border: none;
 }
 
-/* MOBILE POSITION ADJUST */
 @media (max-width: 991px) {
 
-   #chat-container {
-        bottom: 14%;
-        right: 5%;
-        width: 90%;
-        height: 80%;
-
-        /* hidden by default on mobile */
-        opacity: 0;
-        transform: scale(0.8);
-        pointer-events: none;
-        border-radius: 12px;
-    }
-
-    #chat-trigger {
-        bottom: 4%;
-        right: 5%;
-    }
-}
-
-/* ICON INSIDE BUTTON */
-#chat-trigger svg {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    fill: currentColor;
-}
-
-/* IFRAME CHAT */
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* LOADING OVERLAY */
-.loading-overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--background-color-1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-}
-
-/* ICON TOGGLE STATE */
-.hidden-icon {
+  #chat-container {
+    bottom: 14%;
+    right: 5%;
+    width: 90%;
+    height: 80%;
     opacity: 0;
+    transform: scale(0.8);
     pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.5);
+    border-radius: 12px;
+  }
+
+  #chat-trigger {
+    bottom: 4%;
+    right: 5%;
+  }
 }
+
+#chat-trigger svg {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: currentColor;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--background-color-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.hidden-icon {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
 /****** contact-card-2 ******/
 
 .contact-card-2 {
@@ -1673,7 +1671,5 @@ footer {
   color: var(--text-color-1);
   background-color: transparent;
 }
-
-
 
 /****** END ******/
