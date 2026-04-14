@@ -2,7 +2,7 @@
 :root {
   --text-color-1: #2B2B2B;
   --text-color-2: #676767;
-  --text-color-3: #8A8D90;
+  --text-color-3: #6B6B6B;
   --text-color-4: #ECECEC;
   --text-color-5: #00000032;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
@@ -16,14 +16,14 @@
 :root[data-theme="dark"] {
   --text-color-1: #ECECEC;
   --text-color-2: #B4B4B4;
-  --text-color-3: #757577;
-  --text-color-4: #2B2B2B;
+  --text-color-3: #9A9A9A;
+  --text-color-4: #ECECEC;
   --text-color-5: #ffffff36;
   --text-gradient: linear-gradient(10deg, #217bfe 10%, #a774ff 60%, #ee4d5d 100%);
   --background-color-1: #272A2C;
   --background-color-2: #1E1F20;
-  --background-color-3: #0D0D0D;
-  --background-color-4: #FFFFFF;
+  --background-color-3: #4A4D4F;
+  --background-color-4: #171717;
   --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.355);
 }
 
@@ -82,9 +82,9 @@ h3 {
 }
 
 h4 {
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
-  font-weight: 100;
+  font-weight: 200;
   font-family: sans-serif;
   color: var(--text-color-2);
 }
@@ -101,7 +101,7 @@ h5 {
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 1px;
   font-weight: 300;
   line-height: 26px;
@@ -208,7 +208,7 @@ a {
   font-size: 32px;
   font-weight: 800;
   padding-top: 4px;
-  font-family: 'Allura';
+  font-family: 'Allura', cursive;
   background: var(--text-gradient);
   -webkit-background-clip: text;
   background-clip: text;
