@@ -19,7 +19,7 @@
   --text-color-3: #757577;
   --text-color-4: #ECECEC;
   --text-color-5: #ffffff36;
-  --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 10%, #ee4d5d 100%);
+  --text-gradient: linear-gradient(10deg, #5a9fff 0%, #d4a0ff 10%, #ff7a8a 100%);
   --background-color-1: #272A2C;
   --background-color-2: #1E1F20;
   --background-color-3: #4A4D4F;
@@ -60,7 +60,7 @@ h1 {
   font-size: 24px;
   letter-spacing: 1px;
   font-weight: 500;
-  font-family: "poppins";
+  font-family: 'Dosis', sans-serif;
   background: var(--text-gradient);
   -webkit-background-clip: text;
   background-clip: text;
@@ -72,7 +72,7 @@ h2 {
   letter-spacing: 2px;
   font-weight: 800;
   text-transform: uppercase;
-  font-family: 'Dosis';
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
@@ -80,7 +80,7 @@ h3 {
   font-size: 18px;
   letter-spacing: 1px;
   font-weight: 500;
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
@@ -88,16 +88,16 @@ h4 {
   font-size: 20px;
   letter-spacing: 2px;
   font-weight: 300;
-  font-family: "poppins";
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
 
 h5 {
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 1px;
   font-weight: 300;
-  font-family: "poppins";
+  font-family: 'Dosis', sans-serif;
   margin: 16px 0;
   color: var(--text-color-1);
 }
@@ -106,7 +106,7 @@ h6 {
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 300;
-  font-family: "poppins";
+  font-family: 'Dosis', sans-serif;
   margin: 16px 0;
   color: var(--text-color-2);
 }
@@ -116,18 +116,18 @@ p {
   letter-spacing: 1px;
   font-weight: 300;
   line-height: 26px;
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
-a {
-  font-size: 16px;
-  letter-spacing: 1px;
-  font-weight: 300;
-  font-family: "poppins";
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--text-color-2);
+a:focus {
+  outline-offset: 2px;
+}
+
+button:focus,
+.custom-btn-nav:focus {
+  outline: 2px solid #217bfe;
+  outline-offset: 2px;
 }
 
 /****** nav ******/
@@ -151,7 +151,7 @@ a {
 .navbar-brand {
   font-size: 32px;
   font-weight: 800;
-  font-family: 'Allura';
+  font-family: 'Allura', cursive, sans-serif;
   background: var(--text-gradient);
   -webkit-background-clip: text;
   background-clip: text;
@@ -177,7 +177,7 @@ a {
   padding: 8px 16px;
   font-size: 14px;
   letter-spacing: 1px;
-  font-family: 'Dosis';
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-4);
   background-color: var(--background-color-4);
 }

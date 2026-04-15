@@ -14,20 +14,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura'>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura&display=swap'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis&display=swap'>
   <link rel="stylesheet" href="project.css">
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- nav -->
   <nav class="custom-navbar">
     <div class="nav-item">
       <a href="../index.html" class="navbar-brand">SunomS</a>
       <div class="nav-side">
-        <a id="theme-toggle-button"><i class="fa-solid fa-moon toggle"></i></a>
-        <a href="mailto:sunoms@outlook.com" target="_blank" class="btn btn-dark custom-btn-nav"><i
-            class="fa-solid fa-envelope"></i>
+        <a id="theme-toggle-button" aria-label="Toggle between light and dark theme"><i class="fa-solid fa-moon toggle" aria-hidden="true"></i></a>
+        <a href="mailto:sunoms@outlook.com" target="_blank" rel="noopener noreferrer" class="btn btn-dark custom-btn-nav"><i
+            class="fa-solid fa-envelope" aria-hidden="true"></i>
           Contact</a>
       </div>
     </div>
@@ -41,13 +42,13 @@
   <!-- sidebar -->
   <div class="sidebar">
     <div class="brand">
-      <img src="../Img/icon-logo.webp" class="img-fluid" alt="Responsive Image">
+      <img src="../Img/icon-logo.webp" class="img-fluid" alt="Iconicli company logo">
       <h4>Iconicli</h4>
     </div>
     <div class="brand-link">
-      <h5><i class="fa-solid fa-earth-americas"></i><a href="https://www.iconicli.com/" target="_blank">
+      <h5><i class="fa-solid fa-earth-americas" aria-hidden="true"></i><a href="https://www.iconicli.com/" target="_blank" rel="noopener noreferrer">
           www.iconicli.com</a></h5>
-      <h5><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/company/iconicli/" target="_blank">
+      <h5><i class="fa-brands fa-linkedin" aria-hidden="true"></i><a href="https://www.linkedin.com/company/iconicli/" target="_blank" rel="noopener noreferrer">
           /company/iconicli</a></h5>
     </div>
     <div class="brand-link">
@@ -59,19 +60,19 @@
   </div>
 
   <!-- main -->
-  <main>
+  <main id="main-content">
     <!-- Project-start -->
     <section class="Project-start" id="Project-start">
       <div class="container info">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 mx-auto">
             <h2 class="section-title">Redesign Iconicli</h2>
-            <img src="../Img/iconicli-1.webp" class="img-fluid" alt="Responsive Image">
+            <img src="../Img/iconicli-1.webp" class="img-fluid" alt="Screenshot of Iconicli platform homepage design">
             <p>
               Iconicli is a dynamic online platform that connects models and brands for seamless collaboration. It acts
               as a central hub for fostering partnerships between the two.
             </p>
-            <img src="../Img/iconicli-2.webp" class="img-fluid" alt="Responsive Image">
+            <img src="../Img/iconicli-2.webp" class="img-fluid" alt="Screenshot of Iconicli collaboration interface design">
           </div>
         </div>
       </div>
@@ -99,12 +100,12 @@
             <div class="comparisonSection">
               <div class="comparisonImage beforeImage">
                 <div class="img-place">
-                  <img src="../Img/Icon-com-1.webp" alt="before" class="img-fluid">
+                  <img src="../Img/Icon-com-1.webp" alt="Before design: outdated Iconicli interface" class="img-fluid">
                 </div>
               </div>
               <div class="comparisonImage afterImage">
                 <div class="img-place">
-                  <img src="../Img/Icon-com-2.webp" alt="after" class="img-fluid">
+                  <img src="../Img/Icon-com-2.webp" alt="After design: modern Iconicli interface" class="img-fluid">
                 </div>
               </div>
             </div>
@@ -122,7 +123,7 @@
             <ul class="list">
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description1.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description1.webp" class="img-fluid" alt="Icon representing user-centered research">
                   <h3>User-Centered Research</h3>
                   <p>
                     Through in-depth interviews and usability tests, we identified key pain points. These insights
@@ -132,7 +133,7 @@
               </li>
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description3.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description3.webp" class="img-fluid" alt="Icon representing solid design system">
                   <h3>A Solid Design System</h3>
                   <p>
                     Implementing a unified design system standardized elements across the platform, improving
@@ -142,7 +143,7 @@
               </li>
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description2.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description2.webp" class="img-fluid" alt="Icon representing streamlined booking and navigation">
                   <h3>Streamlined Booking & Navigation</h3>
                   <p>
                     Simplified pathways and clearer labels reduced the number of clicks, allowing users to reach their
@@ -152,7 +153,7 @@
               </li>
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description4.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description4.webp" class="img-fluid" alt="Icon representing ongoing analysis for sustainable growth">
                   <h3>Ongoing Analysis for Sustainable Growth</h3>
                   <p>
                     Regularly reviewing weak spots and evolving the platform’s features ensured continuous improvements,
@@ -176,7 +177,7 @@
               <div class="imac">
                 <div class="iscreen">
                   <div class="iviewport">
-                    <img src="../Img/iconicli-view.webp" alt="sunom singha" />
+                    <img src="../Img/iconicli-view.webp" alt="Screenshot of Iconicli platform on a desktop screen" />
                   </div>
                 </div>
                 <div class="ilogo"></div>
@@ -212,10 +213,10 @@
             Interested in transforming your digital experience to better serve your users? Let’s talk and explore how
             thoughtful design can boost engagement, satisfaction, and growth.
           </p>
-          <a href="mailto:sunoms@outlook.com" target="_blank" class="btn btn-dark custom-btn-nav"><i
-              class="fa-solid fa-envelope"></i>
+          <a href="mailto:sunoms@outlook.com" target="_blank" rel="noopener noreferrer" class="btn btn-dark custom-btn-nav"><i
+              class="fa-solid fa-envelope" aria-hidden="true"></i>
             Contact</a>
-          <a style="margin-left: 32px;" href="../index.html"><i class="fa-solid fa-house"></i> Back to home</a>
+          <a style="margin-left: 32px;" href="../index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Back to home</a>
         </div>
       </div>
     </div>

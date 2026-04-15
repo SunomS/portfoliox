@@ -14,21 +14,23 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura'>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura&display=swap'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis&display=swap'>
   <link rel="stylesheet" href="project.css">
 </head>
 
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- nav -->
   <nav class="custom-navbar">
     <div class="nav-item">
       <a href="../index.html" class="navbar-brand">SunomS</a>
       <div class="nav-side">
-        <a id="theme-toggle-button"><i class="fa-solid fa-moon toggle"></i></a>
-        <a href="mailto:sunoms@outlook.com" target="_blank" class="btn btn-dark custom-btn-nav"><i
-            class="fa-solid fa-envelope"></i>
+        <a id="theme-toggle-button" aria-label="Toggle between light and dark theme"><i class="fa-solid fa-moon toggle" aria-hidden="true"></i></a>
+        <a href="mailto:sunoms@outlook.com" target="_blank" rel="noopener noreferrer" class="btn btn-dark custom-btn-nav"><i
+            class="fa-solid fa-envelope" aria-hidden="true"></i>
           Contact</a>
       </div>
     </div>
@@ -42,13 +44,13 @@
   <!-- sidebar -->
   <div class="sidebar">
     <div class="brand">
-      <img src="../Img/swipe-logo.webp" class="img-fluid" alt="Responsive Image">
+      <img src="../Img/swipe-logo.webp" class="img-fluid" alt="SwipeJobb company logo">
       <h4>SwipeJobb</h4>
     </div>
     <div class="brand-link">
-      <h5><i class="fa-solid fa-earth-americas"></i><a href="https://www.swipejobb.se/" target="_blank">
+      <h5><i class="fa-solid fa-earth-americas" aria-hidden="true"></i><a href="https://www.swipejobb.se/" target="_blank" rel="noopener noreferrer">
           www.swipejobb.se</a></h5>
-      <h5><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/company/swipejob/" target="_blank">
+      <h5><i class="fa-brands fa-linkedin" aria-hidden="true"></i><a href="https://www.linkedin.com/company/swipejob/" target="_blank" rel="noopener noreferrer">
           /company/swipejob</a></h5>
     </div>
     <div class="brand-link">
@@ -60,19 +62,19 @@
   </div>
 
   <!-- main -->
-  <main>
+  <main id="main-content">
     <!-- Project-start -->
     <section class="Project-start" id="Project-start">
       <div class="container info">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 mx-auto">
             <h2 class="section-title">SwipeJobb App Design</h2>
-            <img src="../Img/Swipejobb-1.webp" class="img-fluid" alt="Responsive Image">
+            <img src="../Img/Swipejobb-1.webp" class="img-fluid" alt="Screenshot of SwipeJobb job search app homepage design">
             <p>
               App Design | Web Development | SwipeJobb is the ultimate AI-driven job search app.
               It offers a seamless, intelligent way to connect users with their ideal job opportunities.
             </p>
-            <img src="../Img/Swipejobb-2.webp" class="img-fluid" alt="Responsive Image">
+            <img src="../Img/Swipejobb-2.webp" class="img-fluid" alt="Screenshot of SwipeJobb job matching interface design">
           </div>
         </div>
       </div>
@@ -97,12 +99,12 @@
             <div class="comparisonSection">
               <div class="comparisonImage beforeImage">
                 <div class="img-place">
-                  <img src="../Img/Swip-com-1.webp" alt="before" class="img-fluid">
+                  <img src="../Img/Swip-com-1.webp" alt="Before design: cluttered job search interface" class="img-fluid">
                 </div>
               </div>
               <div class="comparisonImage afterImage">
                 <div class="img-place">
-                  <img src="../Img/Swip-com-2.webp" alt="after" class="img-fluid">
+                  <img src="../Img/Swip-com-2.webp" alt="After design: streamlined job search interface" class="img-fluid">
                 </div>
               </div>
             </div>
@@ -120,7 +122,7 @@
             <ul class="list">
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description1.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description1.webp" class="img-fluid" alt="Icon representing user-centric insights">
                   <h3>User-Centric Insights</h3>
                   <p>
                     Conducted comprehensive user interviews with a diverse range of users to identify pain points and
@@ -130,7 +132,7 @@
               </li>
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description5.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description5.webp" class="img-fluid" alt="Icon representing rapid prototyping">
                   <h3>Rapid Prototyping</h3>
                   <p>
                     Spearheaded rapid prototyping initiatives to swiftly align products with market demands, ensuring
@@ -140,7 +142,7 @@
               </li>
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description3.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description3.webp" class="img-fluid" alt="Icon representing pixel-perfect design system">
                   <h3>Pixel-Perfect Design System</h3>
                   <p>
                     Established a pixel-perfect design system that delivered high-quality visuals and seamless user
@@ -150,7 +152,7 @@
               </li>
               <li class="item">
                 <div class="dis-box">
-                  <img src="../Img/description4.webp" class="img-fluid" alt="Responsive Image">
+                  <img src="../Img/description4.webp" class="img-fluid" alt="Icon representing data-driven product enhancements">
                   <h3>Data-Driven Product Enhancements</h3>
                   <p>
                     Continuously gathered and analyzed user feedback to inform data-driven improvements, resulting in
@@ -193,7 +195,7 @@
                       <div class="my-tablet--image">
                         <div class="scroll-img">
                           <div class="scroll-imgview"></div>
-                          <img src="../Img/Swipejobb-view-1.webp" alt="sunom singha" />
+                          <img src="../Img/Swipejobb-view-1.webp" alt="Screenshot of SwipeJobb app on a mobile device" />
                         </div>
                       </div>
                     </div>
@@ -229,10 +231,10 @@
             Interested in transforming your digital experience to better serve your users? Let’s talk and explore how
             thoughtful design can boost engagement, satisfaction, and growth.
           </p>
-          <a href="mailto:sunoms@outlook.com" target="_blank" class="btn btn-dark custom-btn-nav"><i
-              class="fa-solid fa-envelope"></i>
+          <a href="mailto:sunoms@outlook.com" target="_blank" rel="noopener noreferrer" class="btn btn-dark custom-btn-nav"><i
+              class="fa-solid fa-envelope" aria-hidden="true"></i>
             Contact</a>
-          <a style="margin-left: 32px;" href="../index.html"><i class="fa-solid fa-house"></i> Back to home</a>
+          <a style="margin-left: 32px;" href="../index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Back to home</a>
         </div>
       </div>
     </div>

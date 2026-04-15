@@ -19,7 +19,7 @@
   --text-color-3: #9A9A9A;
   --text-color-4: #ECECEC;
   --text-color-5: #ffffff36;
-  --text-gradient: linear-gradient(10deg, #217bfe 10%, #a774ff 60%, #ee4d5d 100%);
+  --text-gradient: linear-gradient(10deg, #5a9fff 10%, #d4a0ff 60%, #ff7a8a 100%);
   --background-color-1: #272A2C;
   --background-color-2: #1E1F20;
   --background-color-3: #4A4D4F;
@@ -60,7 +60,7 @@ h1 {
   font-size: 24px;
   letter-spacing: 1px;
   font-weight: 500;
-  font-family: 'Dosis';
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
@@ -69,7 +69,7 @@ h2 {
   letter-spacing: 1px;
   font-weight: 500;
   text-transform: uppercase;
-  font-family: 'Dosis';
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
@@ -77,7 +77,7 @@ h3 {
   font-size: 22px;
   letter-spacing: 1px;
   font-weight: 500;
-  font-family: 'Dosis';
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
@@ -85,7 +85,7 @@ h4 {
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 200;
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-2);
 }
 
@@ -96,7 +96,7 @@ h5 {
   font-weight: 300;
   line-height: 26px;
   margin-top: -8px;
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
 }
 
@@ -106,16 +106,16 @@ h6 {
   font-weight: 300;
   line-height: 26px;
   margin-top: -8px;
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-2);
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 1px;
   line-height: 24px;
   font-weight: 300;
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: var(--text-color-2);
 }
 
@@ -123,10 +123,37 @@ a {
   font-size: 18px;
   letter-spacing: 1px;
   font-weight: 500;
-  font-family: 'Dosis';
+  font-family: 'Dosis', sans-serif;
   line-height: 26px;
   cursor: pointer;
   color: var(--text-color-1);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--background-color-4);
+  color: var(--text-color-4);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+a:focus {
+  outline: 2px solid #217bfe;
+  outline-offset: 2px;
+}
+
+button:focus {
+  outline: 2px solid #217bfe;
+  outline-offset: 2px;
 }
 
 /****** preloader ******/
