@@ -1,8 +1,8 @@
 /****** root ******/
 :root {
   --text-color-1: #2B2B2B;
-  --text-color-2: #676767;
-  --text-color-3: #6B6B6B;
+  --text-color-2: #595959;
+  --text-color-3: #747474;
   --text-color-4: #ECECEC;
   --text-color-5: #00000032;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
@@ -67,7 +67,7 @@ h1 {
 h2 {
   font-size: 18px;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   font-family: 'Dosis', sans-serif;
   color: var(--text-color-1);
@@ -86,7 +86,7 @@ h4 {
   letter-spacing: 1px;
   font-weight: 200;
   font-family: 'Dosis', sans-serif;
-  color: var(--text-color-2);
+  color: var(--text-color-3);
 }
 
 
@@ -95,9 +95,9 @@ h5 {
   letter-spacing: 1px;
   font-weight: 300;
   line-height: 26px;
-  margin-top: -8px;
-  font-family: 'Dosis', sans-serif;
-  color: var(--text-color-1);
+  margin-top: -4px;
+  font-family: sans-serif , Arial , Helvetica;
+  color: var(--text-color-2);
 }
 
 h6 {
@@ -113,10 +113,10 @@ h6 {
 p {
   font-size: 16px;
   letter-spacing: 1px;
-  line-height: 24px;
+  line-height: 26px;
   font-weight: 300;
-  font-family: 'Dosis', sans-serif;
-  color: var(--text-color-2);
+  font-family: sans-serif , Arial , Helvetica;
+  color: var(--text-color-3);
 }
 
 a {
