@@ -1,9 +1,9 @@
 /****** root ******/
 :root {
   --text-color-1: #2B2B2B;
-  --text-color-2: #595959;
-  --text-color-3: #747474;
-  --text-color-4: #ECECEC;
+  --text-color-2: #4A4A4A;
+  --text-color-3: #838383;
+  --text-color-4: #cdcdcd;
   --text-color-5: #00000032;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
   --background-color-1: #ffffff;
@@ -96,7 +96,7 @@ h5 {
   font-weight: 300;
   line-height: 26px;
   margin-top: -4px;
-  font-family: sans-serif , Arial , Helvetica;
+  font-family: sans-serif, Arial, Helvetica;
   color: var(--text-color-2);
 }
 
@@ -115,8 +115,8 @@ p {
   letter-spacing: 1px;
   line-height: 26px;
   font-weight: 300;
-  font-family: sans-serif , Arial , Helvetica;
-  color: var(--text-color-3);
+  font-family: sans-serif, Arial, Helvetica;
+  color: var(--text-color-2);
 }
 
 a {

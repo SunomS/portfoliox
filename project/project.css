@@ -1,8 +1,8 @@
 /****** root ******/
 :root {
-  --text-color-1: #2B2B2B;
-  --text-color-2: #676767;
-  --text-color-3: #8A8D90;
+   --text-color-1: #2B2B2B;
+  --text-color-2: #4A4A4A;
+  --text-color-3: #838383;
   --text-color-4: #ECECEC;
   --text-color-5: #0000002b;
   --text-gradient: linear-gradient(10deg, #217bfe 0%, #a774ff 30%, #ee4d5d 100%);
@@ -17,7 +17,7 @@
   --text-color-1: #ECECEC;
   --text-color-2: #B4B4B4;
   --text-color-3: #757577;
-  --text-color-4: #ECECEC;
+  --text-color-4: #383838;
   --text-color-5: #ffffff36;
   --text-gradient: linear-gradient(10deg, #5a9fff 0%, #d4a0ff 10%, #ff7a8a 100%);
   --background-color-1: #272A2C;
@@ -256,6 +256,10 @@ button:focus,
   color: #0B65C2;
 }
 
+.brand-link .fa-solid , .fa-regular{
+  color: var(--text-color-3);
+}
+
 @media (max-width: 992px) {
   .sidebar {
     position: relative;
@@ -464,7 +468,7 @@ footer{
 
 .footer-inner{
   background-color: var(--background-color-1);
-  padding: 32px 16px;
+  padding: 32px 32px 80px;
   border-radius: 8px;
 }
 
