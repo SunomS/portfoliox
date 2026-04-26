@@ -8,14 +8,24 @@
     <meta name="description" content="Sunom Singha, UX/UI Designer, Product Designer, Frontend Web Developer">
 
     <title>SunomS - UX & Product Designer</title>
+
+    <script>
+        window.hideLoader = function () {
+            const loading = document.getElementById('loading');
+            if (loading) {
+                loading.style.display = 'none';
+            }
+            console.clear();
+        };
+    </script>
     <link rel="icon" href="Img/logo.webp" type="image/webp" sizes="16x16">
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allura&display=swap'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis&display=swap'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allura&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,8 +44,8 @@
             <div class="nav-side">
                 <button id="theme-toggle-button" type="button" class="btn btn-link" aria-label="Toggle theme"><i
                         class="fa-solid fa-moon toggle"></i></button>
-                <a href="mailto:sunoms@outlook.com" target="_blank" rel="noopener noreferrer" class="btn btn-dark custom-btn-nav"><i
-                        class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:sunoms@outlook.com" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-dark custom-btn-nav"><i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     Contact</a>
             </div>
         </div>
@@ -189,7 +199,7 @@
                     <!-- About me -->
                     <div class="grid-item">
                         <div class="grid-item-box">
-                            <h2>about me</h2>
+                            <h2>LEAD DESIGNER</h2>
                             <div class="grid-item-box-img">
                                 <img src="./Img/sunoms.webp" alt="Sunom Singha" />
                             </div>
@@ -207,26 +217,26 @@
                     <!-- About Skills -->
                     <div class="grid-item">
                         <div class="grid-item-box">
-                            <h2>top skills</h2>
+                            <h2>CORE COMPETENCIES</h2>
                             <div class="grid-item-skill">
                                 <div class="grid-skill-li">
                                     <div class="grid-cell"><i class="fa-solid fa-1"></i>
-                                        <p>User experience design</p>
+                                        <p>Research Synthesis</p>
                                     </div>
                                     <div class="grid-cell"><i class="fa-solid fa-2"></i>
-                                        <p>User interface design</p>
+                                        <p>Design Strategy</p>
                                     </div>
                                     <div class="grid-cell"><i class="fa-solid fa-3"></i>
-                                        <p>Front-End development</p>
+                                        <p>Narrative Design</p>
                                     </div>
                                     <div class="grid-cell"><i class="fa-solid fa-4"></i>
-                                        <p>Web analytics (GA)</p>
+                                        <p>Inclusive Accessibility</p>
                                     </div>
                                     <div class="grid-cell"><i class="fa-solid fa-5"></i>
-                                        <p>E-commerce management</p>
+                                        <p>Interaction Design</p>
                                     </div>
                                     <div class="grid-cell"><i class="fa-solid fa-6"></i>
-                                        <p>Split / A/B testing</p>
+                                        <p>AI-Augmented Design</p>
                                     </div>
                                 </div>
                             </div>
@@ -240,11 +250,10 @@
             <section class="section blog" id="blog">
                 <div class="container-blog">
                     <div class="grid-features">
-
                         <!-- .bento-card.timeline -->
                         <div class="bento-card timeline">
                             <div class="top">
-                                <h2>Timeline</h2>
+                                <h2>PROFESSIONAL JOURNEY</h2>
                                 <div class="grid-item-tl">
                                     <div class="tl-cell">
                                         <i class="fa-solid fa-briefcase"></i>
@@ -290,7 +299,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://www.linkedin.com/in/sunomsingha/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/sunomsingha/" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fa-brands fa-linkedin" aria-hidden="true"></i> Activity
                                 <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                             </a>
@@ -298,38 +308,48 @@
 
                         <!-- .bento-card.logo -->
                         <div class="bento-card logo">
-                            <h2>like to use</h2>
+                            <h2>METHODS & TOOLS</h2>
                             <div class="grid-item-logo">
                                 <div class="grid-logo-li">
-                                    <div class="grid-cell-2"><i class="fa-brands fa-figma"></i>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-brands fa-figma"></i>
                                         <h4>Figma</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-sketch"></i>
-                                        <h4>Sketch</h4>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                        <h4>Web Analytics</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-buromobelexperte"></i>
-                                        <h4>Adobe Suite</h4>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-solid fa-flask"></i>
+                                        <h4>A/B Testing</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-html5"></i>
-                                        <h4>HTML</h4>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-solid fa-chart-pie"></i>
+                                        <h4>Data Analysis</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-css3-alt"></i>
-                                        <h4>CSS</h4>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-solid fa-microchip"></i>
+                                        <h4>AI Literacy</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-js"></i>
-                                        <h4>JS</h4>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-solid fa-universal-access"></i>
+                                        <h4>WCAG</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-github"></i>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-brands fa-html5"></i>
+                                        <h4>HTML, CSS, JS</h4>
+                                    </div>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-brands fa-github"></i>
                                         <h4>GitHub</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-wordpress"></i>
-                                        <h4>WordPress</h4>
-                                    </div>
-                                    <div class="grid-cell-2"><i class="fa-brands fa-atlassian"></i>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-brands fa-atlassian"></i>
                                         <h4>Atlassian</h4>
                                     </div>
-                                    <div class="grid-cell-2"><i class="fa-solid fa-brain"></i>
-                                        <h4>AI Design</h4>
+                                    <div class="grid-cell-2">
+                                        <i class="fa-solid fa-brain"></i>
+                                        <h4>AI-Assisted</h4>
                                     </div>
                                 </div>
                             </div>
@@ -337,8 +357,9 @@
 
                         <!-- .bento-card.shot -->
                         <div class="bento-card shot">
-                            <h2>Dribbble shot</h2>
-                            <a href="https://dribbble.com/shots/24859836-Dashboard-Design" target="_blank" rel="noopener noreferrer">
+                            <h2>Featured Snapshot</h2>
+                            <a href="https://dribbble.com/shots/24859836-Dashboard-Design" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fa-brands fa-dribbble" aria-hidden="true"></i> Dashboard
                                 <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
                         </div>
@@ -353,7 +374,8 @@
                                     effortlessly to any screen.
                                 </p>
                             </div>
-                            <a href="https://www.linkedin.com/in/sunomsingha/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/sunomsingha/" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fa-brands fa-figma" aria-hidden="true"></i> Design
                                 <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
                             </a>
@@ -433,7 +455,8 @@
                                 <span class="visually-hidden">Loading...</span>
                             </div>
                         </div>
-                        <iframe title="Chat support widget" src="https://tawk.to/chat/69dcf63cdf37131c34b6023e/1jm3i3n8c" id="chat-iframe"
+                        <iframe title="Chat support widget"
+                            src="https://tawk.to/chat/69dcf63cdf37131c34b6023e/1jm3i3n8c" id="chat-iframe"
                             onload="hideLoader()">
                         </iframe>
                     </div>
@@ -471,12 +494,15 @@
                                 <h6 class="email"><strong>Email:</strong> <a href="mailto:sunoms@outlook.com"
                                         target="_blank" rel="noopener noreferrer">sunoms@outlook.com</a></h6>
                                 <div class="social">
-                                    <a href="https://www.linkedin.com/in/sunomsingha/" target="_blank" rel="noopener noreferrer"
-                                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-                                    <a href="https://dribbble.com/Sunom" target="_blank" rel="noopener noreferrer" aria-label="Dribbble"><i
-                                            class="fa-brands fa-square-dribbble" aria-hidden="true"></i></a>
-                                    <a href="https://www.instagram.com/sunom.singha/" target="_blank" rel="noopener noreferrer"
-                                        aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="https://www.linkedin.com/in/sunomsingha/" target="_blank"
+                                        rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"
+                                            aria-hidden="true"></i></a>
+                                    <a href="https://dribbble.com/Sunom" target="_blank" rel="noopener noreferrer"
+                                        aria-label="Dribbble"><i class="fa-brands fa-square-dribbble"
+                                            aria-hidden="true"></i></a>
+                                    <a href="https://www.instagram.com/sunom.singha/" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Instagram"><i
+                                            class="fa-brands fa-instagram" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
