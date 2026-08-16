@@ -6,6 +6,43 @@ const applySavedTheme = () => {
     root.setAttribute('data-theme', initialTheme);
 };
 
+const initChatbotHoverActivation = () => {
+    const chatFrame = document.querySelector('.chat-embed iframe');
+    const chatEmbed = document.querySelector('.chat-embed');
+    if (!chatFrame || !chatEmbed) return;
+
+    const chatSrc = chatFrame.dataset.chatSrc || chatFrame.getAttribute('src');
+    if (!chatSrc || chatSrc === 'about:blank') return;
+
+    const shouldActivateOnLoad = sessionStorage.getItem('chatbot-active') === '1';
+
+    if (shouldActivateOnLoad) {
+        chatFrame.src = chatSrc;
+        return;
+    }
+
+    chatFrame.src = 'about:blank';
+
+    const activateChat = () => {
+        if (chatFrame.src === 'about:blank') {
+            chatFrame.src = chatSrc;
+            sessionStorage.setItem('chatbot-active', '1');
+        }
+        chatEmbed.removeEventListener('mouseenter', activateChat);
+        chatEmbed.removeEventListener('focusin', activateChat);
+    };
+
+    chatEmbed.addEventListener('mouseenter', activateChat);
+    chatEmbed.addEventListener('focusin', activateChat);
+};
+
+window.addEventListener('beforeunload', () => {
+    const chatFrame = document.querySelector('.chat-embed iframe');
+    if (chatFrame && chatFrame.src && chatFrame.src !== 'about:blank') {
+        sessionStorage.setItem('chatbot-active', '0');
+    }
+});
+
 const toggleThemeOverlayAnimation = (newTheme) => {
     const root = document.documentElement;
     const overlay = document.createElement('div');
@@ -39,6 +76,7 @@ const toggleThemeOverlayAnimation = (newTheme) => {
 // Apply the saved theme when the page loads
 window.addEventListener("load", () => {
     applySavedTheme();
+    initChatbotHoverActivation();
     document.getElementById('theme-toggle-button').addEventListener('click', () => {
         const root = document.documentElement;
         const currentTheme = root.getAttribute('data-theme');
@@ -332,39 +370,3 @@ mainTL
     .add(slideTL)
     .add(maskTL, 1.5);
 
-
-// RESPONSIVE STATE CONTROL
-
-function setInitialState() {
-    if (window.innerWidth <= 991) {
-        // MOBILE / TAB → CLOSED
-        isOpen = false;
-
-        gsap.set(container, {
-            opacity: 0,
-            scale: 0.8,
-            pointerEvents: 'none'
-        });
-
-        openIcon.classList.remove('hidden-icon');
-        closeIcon.classList.add('hidden-icon');
-
-    } else {
-        // DESKTOP → OPEN
-        isOpen = true;
-
-        gsap.set(container, {
-            opacity: 1,
-            scale: 1,
-            pointerEvents: 'auto'
-        });
-
-        closeIcon.classList.remove('hidden-icon');
-        openIcon.classList.add('hidden-icon');
-    }
-}
-
-// Run on resize
-window.addEventListener('resize', () => {
-    setInitialState();
-});
